@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XIA SHANG TRADING PTE LTD</title>
+    <!-- 导入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+   <style>
+    /* 主页面的样式 */
+    body {
+        font-family: 'Source Sans Pro', sans-serif; /* 使用 Source Sans Pro 字体 */
+        margin: 0; /* 移除页面默认的外边距 */
+        padding: 0; /* 移除页面默认的内边距 */
+    }
+       
+.container .contact-section {
+}
+
+    .container {
+    width: 100%; /* 设置容器宽度为 100% */
+    max-width: 1200px; /* 最大宽度为 1200px */
+    margin: auto; /* 自动居中 */
+    padding: 20px; /* 内边距为 20px */
+    }
+
+    header {
+        display: flex; /* 使用 flex 布局 */
+        justify-content: space-between; /* 主轴方向上的元素均匀分布 */
+        align-items: center; /* 交叉轴方向上元素居中 */
+        padding: 20px; /* 内边距为 20px */
+        background: #fff; /* 背景颜色为白色 */
+        color: #333; /* 文字颜色为深灰色 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    }
+
+    .logo {
+    font-size: 24px; /* 字体大小为 24px */
+    font-weight: 600; /* 字体加粗 */
+    color: #333; /* 文字颜色为深灰色 */
+    text-decoration: none; /* 去除下划线 */
+    display: flex; /* 使用 flex 布局 */
+    align-items: center; /* 交叉轴方向居中 */
+    padding-bottom: 0px;
+    }
+
+    nav ul {
+        list-style: none; /* 去除列表项的默认样式 */
+        padding: 0; /* 移除内边距 */
+        margin: 0; /* 移除外边距 */
+        display: flex; /* 使用 flex 布局 */
+        align-items: center; /* 交叉轴方向居中 */
+    }
+
+    nav ul li {
+        margin: 0 15px; /* 左右外边距为 15px */
+    }
+
+    nav ul li a {
+        text-decoration: none; /* 去除链接下划线 */
+        color: #333; /* 链接文字颜色为深灰色 */
+        font-weight: 600; /* 字体加粗 */
+    }
+
+    .hamburger {
+        display: none; /* 默认隐藏 */
+        flex-direction: column; /* 子元素垂直排列 */
+        cursor: pointer; /* 鼠标悬浮时显示手型 */
+    }
+
+    .hamburger div {
+        width: 25px; /* 宽度为 25px */
+        height: 3px; /* 高度为 3px */
+        background: #333; /* 背景颜色为深灰色 */
+        margin: 4px; /* 子元素之间的间距为 4px */
+    }
+
+    nav {
+        display: flex; /* 使用 flex 布局 */
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            display: none; /* 隐藏导航栏 */
+            position: absolute; /* 绝对定位 */
+            top: 100%; /* 顶部与导航栏对齐 */
+            right: 0; /* 靠右对齐 */
+            background: #fff; /* 背景颜色为白色 */
+            width: 100%; /* 宽度为 100% */
+            flex-direction: column; /* 子元素垂直排列 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+
+        nav ul {
+            flex-direction: column; /* 子元素垂直排列 */
+        }
+
+        nav ul li {
+            margin: 10px 0; /* 上下外边距为 10px */
+            text-align: center; /* 文本居中 */
+        }
+
+        .hamburger {
+            display: flex; /* 显示汉堡菜单 */
+        }
+
+        .hamburger.active + nav {
+            display: flex; /* 当汉堡菜单激活时显示导航栏 */
+        }
+    }
+
+    .hero {
+        position: relative; /* 相对定位 */
+        width: 100%; /* 宽度为 100% */
+        height: 400px; /* 高度为 400px */
+        background: url('cover-image.jpg') no-repeat center center; /* 背景图像设置 */
+        background-size: cover; /* 背景图像填充方式 */
+        display: flex; /* 使用 flex 布局 */
+        align-items: center; /* 垂直居中 */
+        justify-content: center; /* 水平居中 */
+        color: #fff; /* 文字颜色为白色 */
+        text-align: left; /* 文本居左对齐 */
+        
+    }
+
+    .hero::after {
+        content: ""; /* 添加一个空内容的伪元素 */
+        position: absolute; /* 绝对定位 */
+        top: 0; /* 顶部对齐 */
+        left: 0; /* 左对齐 */
+        width: 100%; /* 宽度为 100% */
+        height: 100%; /* 高度为 100% */
+        background: rgba(0, 0, 0, 0.4); /* 黑色背景且透明度为 0.4 */
+        
+    }
+
+    .hero-content {
+        position: relative; /* 相对定位 */
+        z-index: 1; /* 叠层顺序，确保在背景伪元素之上 */
+        font-size: 36px; /* 字体大小为 36px */
+        font-weight: 700; /* 字体加粗 */
+        padding: 0 20px; /* 左右内边距为 20px */
+    }
+
+    /* 修改标题样式，突出显示 */
+.main-title {
+    font-family: 'Poppins', sans-serif; /* 使用 Poppins 字体 */
+    font-size: 26px; /* 增加字体大小 */
+    font-weight: 600; /* 字体加粗 */
+    color: #; /* 标题颜色为绿色 */
+    text-align: center; /* 标题居中对齐 */
+    margin-bottom: 30px; /* 标题与下方内容的间距 */
+    border-bottom: 1px solid #4CAF50; /* 标题底部的下划线 */
+    padding-bottom: 15px; /* 标题底部内边距 */
+}
+    #custom-html-container {
+        display: flex; /* 使用 flex 布局 */
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        width: 100%; /* 宽度为 100% */
+        max-width: 1200px; /* 最大宽度为 1200px */
+        margin: 0 auto; /* 居中对齐 */
+        flex-direction: column; /* 子元素垂直排列 */
+    }
+
+   /* 修改产品容器的样式 */
+.product-container {
+    display: grid; /* 使用网格布局 */
+    gap: 20px; /* 网格项之间的间距为 20px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 响应式网格布局 */
+    justify-items: center; /* 网格项水平居中 */
+    width: 100%; /* 宽度为父容器的 100% */
+}
+
+    /* 产品卡片样式 */
+.card {
+    background-color: #ffffff; /* 卡片背景色为白色 */
+    border-radius: 10px; /* 卡片的圆角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    transition: box-shadow 0.3s, transform 0.3s; /* 过渡效果 */
+    cursor: pointer; /* 鼠标悬浮时显示手型 */
+    overflow: hidden; /* 隐藏超出部分 */
+    max-width: 300px; /* 卡片最大宽度 */
+    text-align: center; /* 卡片文本居中 */
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 鼠标悬浮时阴影加深 */
+    transform: translateY(-5px); /* 鼠标悬浮时卡片上移 5px */
+}
+
+.content {
+    padding: 20px; /* 内容内边距 */
+}
+
+.content h2 {
+    margin: 0; /* 移除外边距 */
+    font-size: 18px; /* 字体大小为 18px */
+    font-weight: 700; /* 字体加粗 */
+    color: #333; /* 字体颜色为深灰色 */
+}
+
+.content p {
+    margin: 10px 0 0; /* 上边距为 10px，其他边距为 0 */
+    font-size: 14px; /* 字体大小为 14px */
+    font-weight: 400; /* 正常字体粗细 */
+    color: #666; /* 字体颜色为浅灰色 */
+}
+
+    /* 新加入的供应链部分样式 - 使用特定前缀 sc-* 避免冲突 */
+    .sc-container {
+        display: flex; /* 使用 flex 布局 */
+        max-width: 1200px; /* 最大宽度为 1200px */
+        width: 100%; /* 宽度为 90% */
+        margin: 20px auto; /* 上下外边距为 20px，水平居中 */
+        background-color: #ffffff; /* 背景颜色为白色 */
+        border-radius: 10px; /* 圆角为 10px */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        overflow: hidden; /* 隐藏超出部分 */
+        flex-direction: column; /* 子元素垂直排列 */
+    }
+
+    .sc-supply-section {
+        padding: 20vw; /* 内边距为视窗宽度的 5% */
+        width: 100%; /* 宽度为 100% */
+    }
+
+    .sc-supply-content {
+        max-width: 800px; /* 最大宽度为 800px */
+        margin: auto; /* 居中对齐 */
+        text-align: left; /* 文本左对齐 */
+    }
+
+    .sc-image-section {
+        display: none; /* 默认隐藏 */
+        max-width: 400px; /* 最大宽度为 400px */
+        width: 100%; /* 宽度为 100% */
+        background-size: cover; /* 背景图像填充方式 */
+        background-position: center; /* 背景图像居中 */
+    }
+
+    .sc-h2 {
+        font-family: 'Poppins', sans-serif; /* 使用 Poppins 字体 */
+        font-weight: 700; /* 字体加粗 */
+        font-size: 24px; /* 字体大小为 24px */
+        color: #333; /* 文字颜色为深灰色 */
+        border-bottom: 3px solid #4CAF50; /* 底部边框为绿色，宽度为 3px */
+        padding-bottom: 10px; /* 底部内边距为 10px */
+        margin-bottom: 20px; /* 底部外边距为 20px */
+    }
+
+    .sc-h3 {
+        font-family: 'Poppins', sans-serif; /* 使用 Poppins 字体 */
+        font-weight: 600; /* 字体加粗 */
+        font-size: 20px; /* 字体大小为 20px */
+        color: #4CAF50; /* 文字颜色为绿色 */
+        margin-bottom: 15px; /* 底部外边距为 15px */
+    }
+
+    .sc-p {
+        font-size: 14px; /* 字体大小为 14px */
+        line-height: 1.8; /* 行高为 1.8 */
+        color: #444; /* 文字颜色为深灰色 */
+        margin-bottom: 20px; /* 底部外边距为 20px */
+    }
+
+    @media (min-width: 768px) {
+        .sc-container {
+            flex-direction: row; /* 宽屏时子元素水平排列 */
+        }
+
+        .sc-supply-section {
+            width: 60%; /* 宽度为 60% */
+            padding: 40px; /* 内边距为 40px */
+        }
+
+        .sc-image-section {
+            display: block; /* 显示图片部分 */
+            width: 40%; /* 宽度为 40% */
+            background-image: url('供应链.webp'); /* 设置背景图像 */
+        }
+
+        .sc-h2 {
+            font-size: 26px; /* 字体大小为 26px */
+        }
+
+        .sc-h3 {
+            font-size: 22px; /* 字体大小为 22px */
+        }
+
+        .sc-p {
+            font-size: 16px; /* 字体大小为 16px */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .sc-supply-section {
+            padding: 20px; /* 内边距为 20px */
+        }
+
+        .sc-h2 {
+            font-size: 20px; /* 字体大小为 20px */
+        }
+
+        .sc-h3 {
+            font-size: 18px; /* 字体大小为 18px */
+        }
+
+        .sc-p {
+            font-size: 14px; /* 字体大小为 14px */
+        }
+    }
+
+    /* WhatsApp 悬浮按钮样式 */
+    .whatsapp-float-button {
+        position: fixed; /* 固定定位 */
+        bottom: 20px; /* 距离底部 20px */
+        right: 20px; /* 距离右侧 20px */
+        background-color: #25D366; /* 背景颜色为绿色 */
+        color: white; /* 文字颜色为白色 */
+        border-radius: 50%; /* 圆形按钮 */
+        width: 60px; /* 按钮宽度为 60px */
+        height: 60px; /* 按钮高度为 60px */
+        display: flex; /* 使用 flex 布局 */
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+        cursor: pointer; /* 鼠标悬浮时显示手型 */
+        z-index: 1000; /* 叠层顺序，确保浮于其他内容之上 */
+    }
+
+    .whatsapp-icon {
+        width: 35px; /* 图标宽度为 35px */
+        height: 35px; /* 图标高度为 35px */
+    }
+
+    .animated-bounce {
+        animation: bounce 1.5s infinite; /* 添加弹跳动画，1.5s 循环 */
+    }
+
+    @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0); /* 初始位置 */
+        }
+
+        40% {
+            transform: translateY(-10px); /* 向上移动 10px */
+        }
+
+        60% {
+            transform: translateY(-5px); /* 向上移动 5px */
+        }
+    }
+       /* 调整各个模块之间的默认外边距 */
+
+/* 主容器和封面部分之间的间距 */
+.hero {
+    margin-bottom: 60px; /* 主容器与封面部分之间的间距 */
+}
+
+/* 业务范围部分与上方内容的间距 */
+.main-title {
+    margin-top: 60px; /* 标题的顶部外边距，拉开与上方模块的距离 */
+    margin-bottom: 30px; /* 标题与下方内容之间的间距 */
+}
+
+/* 产品内容容器与下方其他模块之间的间距 */
+#custom-html-container {
+    margin-bottom: 60px; /* 产品内容与下方其他模块之间的间距 */
+}
+
+/* 供应链模块与下方联系信息模块之间的间距 */
+.sc-container {
+    margin-bottom: 30px; /* 设置供应链模块的底部外边距 */
+}
+
+/* 联系信息部分的外边距 */
+.contact-section {
+    margin-bottom: 50px; /* 联系信息与地图部分之间的间距 */
+}
+
+   </style>
+
+
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 导航栏 -->
+        <header>
+            <a href="#" class="logo">
+                <img src="logo-01.png" alt="Company Logo" width="40" height="40">
+                &nbsp;XIA SHANG TRADING PTE LTD
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="主页.html">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="company-profile-en.html">COMPANY PROFILE</a></li>
+                    <li><a href="#" onClick="toggleLanguage()">EN/</a><a href="中文主页.html">中文</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- WhatsApp 悬浮按钮 -->
+        <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        </a>
+
+        <!-- 封面部分 -->
+        
+      <div class="hero" style="position: relative; background: url('封面.jpg') no-repeat center center; background-size: cover; height: 400px;">
+       
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(225, 225, 225, 0.3);"></div>
+            <div class="hero-content">
+              <p style="font-size: 36px; font-weight: bold; margin: 0;">Premium Chinese bus parts for efficient&nbsp;&nbsp;</p>
+<p style="font-size: 36px; font-weight: bold; margin: 0;">and reliable vehicle performance.</p>
+                <p style="margin-top: 24px; font-size: 18px; max-width: 500px; line-height: 1.5; margin-bottom: 20px;">
+                    Comprehensive bus parts solutions, covering all key systems to support optimal performance and operational efficiency.
+                </p>
+            </div>
+        </div>
+
+        <!-- 业务范围部分 -->
+       <!-- 产品模块整体容器 -->
+<div class="product-module">
+    <!-- 模块标题部分 -->
+    
+    <!-- 产品内容容器 -->
+    <div id="custom-html-container">
+        <div class="product-container">
+            <!-- 产品内容卡片部分 -->
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Lighting Systems</h2>
+                    <p class="card-text">Various types of headlights, lamps, and related accessories.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Braking & Suspension Systems</h2>
+                    <p class="card-text">Brake systems, suspension components, and related parts.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Transmission & Steering Components</h2>
+                    <p class="card-text">Drive shafts, steering systems, assist pumps, and mirrors.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Engine & Power Systems</h2>
+                    <p class="card-text">Engine parts, generators, filters, sensors, and more.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Transmission & Clutch Systems</h2>
+                    <p class="card-text">Various types of gearboxes, clutches, and related components.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Body Components</h2>
+                    <p class="card-text">Body parts, front and rear glass panels.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Filters & Fuel Tank Systems</h2>
+                    <p class="card-text">Various filters, fuel tank parts, urea treatment systems.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="card-title">Miscellaneous Parts</h2>
+                    <p class="card-text">Locks, brake components, suspension systems, belts, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- 供应链部分 -->
+        <div class="sc-container">
+            <!-- 图片部分 -->
+            <div class="sc-image-section"></div>
+            <!-- 供应链内容部分 -->
+            <div class="sc-supply-section">
+                <div class="sc-supply-content">
+                    <h3 class="sc-h3">Bus Parts Distribution and Accessory Partnership in Singapore</h3>
+                    <p class="sc-p">We specialize in providing efficient, high-quality bus parts distribution services in the Singapore market, ensuring that our clients receive the necessary components in the shortest possible time. With modern logistics solutions and localized rapid delivery, we offer reliable operational support for our customers.</p>
+
+                    <h3 class="sc-h3">Deep Partnership with Leading Suppliers</h3>
+                    <p class="sc-p">We have established close partnerships with several well-known bus parts manufacturers in China, providing key components including body parts, engines, braking systems, and suspension systems. Whether you need original parts or customized solutions, we can meet your specific needs.</p>
+
+                    <h3 class="sc-h3">Supporting Electric Bus Solutions</h3>
+                    <p class="sc-p">Looking ahead, we will gradually introduce a complete range of parts for electric buses, supporting the development of environmentally friendly and efficient public transport solutions. Our goal is to be your long-term partner in the bus parts field, ensuring your operations always run at their best.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系信息和地图部分 -->
+        <div class="contact-section" style="display: flex; align-items: flex-start; gap: 20px; padding: 40px; margin: 0 10px;">
+            <!-- 联系信息部分 -->
+<div class="contact-info" style="flex: 2; display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1; min-width: 200px;">
+        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Address:</h2>
+<p><strong>32 Old Toh Tuck Road</strong></p>
+        <p><strong>Ibiz Center #01-03</strong></p>
+        <p><strong>S(597658)</strong></p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Phone:</h2>
+<p><strong>6862 3986</strong></p>
+        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 20px;">Email:</h2>
+<p><a href="mailto:xiashangtpl@outlook.com"><strong>xiashangtpl@outlook.com</strong></a></p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Business Hours:</h2>
+<p><strong>Monday to Friday:</strong></p>
+        <p><strong>9:00 AM - 12:00 PM, 1:00 PM - 6:00 PM</strong></p>
+        <p><strong>Saturday:</strong></p>
+        <p><strong>9:00 AM - 12:00 PM, 1:00 PM - 4:00 PM</strong></p>
+        <p><strong>(Closed on Public Holidays)</strong></p>
+    </div>
+</div>
+
+            <!-- 地图部分 -->
+            <div class="map-container" style="flex: 1; max-width: 400px; height: 300px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7967.482768162027!2d103.75525304070282!3d1.3336943983020481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da111f2e1b7abf%3A0x66f6b2e1f0170e2c!2s32%20Old%20Toh%20Tuck%20Rd%2C%20Singapore%20597658!5e0!3m2!1sen!2ssg!4v1690298999990!5m2!1sen!2ssg"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+
+        <!-- 页脚部分 -->
+        <footer style="background: #333; color: #fff; padding: 40px 0;">
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="footer-links" style="margin-bottom: 20px;">
+                    <a href="index.html" style="color: #fff; margin-top: 20px; margin-right: 20px; margin-left: 20px; text-decoration: none; margin-bottom: 20px;">Home</a>
+                    <a href="#about" style="color: #fff; margin: 0 15px; text-decoration: none;">About Us</a>
+                    <a href="company-profile-en.html" style="color: #fff; margin: 0 15px; text-decoration: none;">Company Profile</a>
+                    <a href="#contact" style="color: #fff; margin: 0 15px; text-decoration: none;">Contact</a>
+                    <a href="#privacy-policy" style="color: #fff; margin: 0 15px; text-decoration: none;">Privacy Policy</a>
+                </div>
+                <div class="contact-info" style="margin-bottom: 20px;">
+                    <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, Singapore 597658</p>
+                    <p style="margin: 5px 0;">Phone: 6862 3986 | Email: <a href="mailto:xiashangtpl@outlook.com" style="color: #25D366; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+                </div>
+                <div class="footer-bottom">
+                    <p style="margin: 0;">&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript 功能，菜单切换和语言切换 -->
+        <script>
+            function toggleMenu() {
+                const nav = document.querySelector('nav');
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            }
+
+            function toggleLanguage() {
+                const currentLang = document.documentElement.lang;
+                if (currentLang === 'en-US') {
+                    document.documentElement.lang = 'zh-CN';
+                    window.location.href = 'index-zh.html'; // 跳转到中文网页
+                } else {
+                    document.documentElement.lang = 'en-US';
+                    window.location.href = 'index.html'; // 跳转到英文网页
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
+

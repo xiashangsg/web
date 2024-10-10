@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XIA SHANG TRADING PTE LTD - Company Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 4px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                width: 100%;
+                flex-direction: column;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active + nav {
+                display: flex;
+            }
+        }
+
+        .hero {
+            background: url('singapore2.webp') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .content-section {
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .content-section p,
+        .content-section ul {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .content-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer .footer-links {
+            margin-bottom: 15px;
+        }
+
+        footer .footer-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        footer .footer-links a:hover {
+            color: #007bff;
+        }
+
+        footer .footer-bottom {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <header>
+            <a href="#" class="logo"><img src="logo-01.png" alt="Company Logo" width="40" height="40"> &nbsp;XIA SHANG TRADING PTE LTD</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="company-profile-en.html">COMPANY PROFILE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Company Profile</h1>
+        </div>
+
+        <!-- Company Information Section -->
+        <div class="content-section">
+            <h2>About Us</h2>
+            <p><strong>XIA SHANG TRADING PTE LTD</strong> was established in 2009, specializing in high-quality bus parts sourced from China. With years of experience, we have built a strong supply chain network to quickly meet the needs of our customers, ensuring the efficient operation and long-term reliability of their vehicles.</p>
+        </div>
+
+        <!-- Our Advantages Section -->
+        <div class="content-section">
+            <h2>Our Advantages</h2>
+            <ul>
+                <li><strong>Comprehensive Parts Supply:</strong> We maintain a wide range of in-stock parts, ensuring immediate availability for all essential components.</li>
+                <li><strong>Flexible Procurement:</strong> We offer customized procurement options for special parts, providing tailored solutions to meet specific needs.</li>
+                <li><strong>Efficient Local Delivery:</strong> Our dedicated fleet ensures quick and safe delivery, minimizing downtime for customers.</li>
+            </ul>
+        </div>
+
+        <!-- Mission and Vision Section -->
+        <div class="content-section">
+            <h2>Our Mission and Vision</h2>
+            <p>Our vision is to become a trusted partner in Singapore's bus parts market. We aim to provide stable product quality and excellent service, ensuring our customers receive the parts they need, when they need them, to keep their vehicles in top condition.</p>
+        </div>
+
+        <!-- Core Values Section -->
+        <div class="content-section">
+            <h2>Core Values</h2>
+            <ul>
+                <li><strong>Customer First:</strong> We prioritize customer needs and provide tailored solutions that exceed expectations.</li>
+                <li><strong>Quality Assurance:</strong> We adhere to strict quality standards to ensure that all parts meet the highest requirements.</li>
+                <li><strong>Efficient Service:</strong> We continuously optimize our supply chain to provide fast and reliable service to all our customers.</li>
+            </ul>
+        </div>
+
+<footer style="background: #333; color: #fff; padding: 40px 0;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+            <a href="index.html" style="color: #fff; margin: 0 15px; text-decoration: none;">Home</a>
+            <a href="#about" style="color: #fff; margin: 0 15px; text-decoration: none;">About Us</a>
+            <a href="company-profile-en.html" style="color: #fff; margin: 0 15px; text-decoration: none;">Company Profile</a>
+            <a href="#contact" style="color: #fff; margin: 0 15px; text-decoration: none;">Contact</a>
+            <a href="#privacy-policy" style="color: #fff; margin: 0 15px; text-decoration: none;">Privacy Policy</a>
+        </div>
+        <div class="contact-info" style="margin-bottom: 20px;">
+            <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, Singapore 597658</p>
+            <p style="margin: 5px 0;">Phone: 6862 3986 | Email: <a href="mailto:xiashangtpl@outlook.com" style="color: #25D366; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+        </div>
+        <div class="footer-bottom">
+            <p style="margin: 0;">&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+        <script>
+            function toggleMenu() {
+                const nav = document.querySelector('nav');
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            }
+        </script>
+    </div>
+</body>
+
+</html>
