@@ -217,14 +217,48 @@
             font-size: 14px;
             color: #666;
         }
+        /* WhatsApp 悬浮按钮样式 */
+.whatsapp-float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.animated-bounce {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 调整各个模块之间的外边距 */
+.hero {
+    margin-bottom: 60px;
+}
     </style>
 </head>
 
 <body>
     <div class="container">
         <!-- Navigation Bar -->
+         <!-- 导航栏 -->
         <header>
-            <a href="#" class="logo"><img src="logo-01.png" alt="Company Logo" width="40" height="40"> &nbsp;XIA SHANG TRADING PTE LTD</a>
+            <a href="#" class="logo">
+                <img src="logo-01.png" alt="Company Logo" width="40" height="40">
+                &nbsp;XIA SHANG TRADING PTE LTD
+            </a>
             <div class="hamburger" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
@@ -232,13 +266,18 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                    <li><a href="company-profile-en.html">COMPANY PROFILE</a></li>
+                   <li><a href="index.html">HOME</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="company-profile-en.html?lang=zh">COMPANY PROFILE</a></li>
+                    <li><a href="中文主页.html">中文</a><a href="services.html?lang=zh" onClick="toggleLanguage()"></a></li>
+
                 </ul>
             </nav>
         </header>
+        <!-- WhatsApp 悬浮按钮 -->
+        <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        </a>
 
         <!-- Hero Section -->
         <div class="hero">
