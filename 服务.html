@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我们的服务 - XIA SHANG TRADING PTE LTD</title>
+    <!-- 导入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 主页面的样式 */
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            margin-bottom: 60px; /* 调整这里的值来增加标题和导航之间的空白 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 4px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #fff;
+                width: 100%;
+                flex-direction: column;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active + nav {
+                display: flex;
+            }
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('cover-image.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            font-size: 36px;
+            font-weight: 700;
+            padding: 0 20px;
+        }
+
+        .service-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-section .text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .service-section img.icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .service-section .text h2 {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* WhatsApp 悬浮按钮样式 */
+        .whatsapp-float-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .animated-bounce {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+    <div class="container">
+<header>
+    <a href="#" class="logo">
+        <img src="logo-01.png" alt="Company Logo" width="40" height="40">
+        &nbsp;XIA SHANG TRADING PTE LTD
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav>
+        <ul id="menu">
+            <li><a href="主页.html">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="company-profile-en.html">COMPANY PROFILE</a></li>
+            <li><a href="#" onclick="toggleLanguage()">EN/</a><a href="中文主页.html">中文</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <h1>我们的服务</h1>
+    <p>在 <strong>XIA SHANG TRADING PTE LTD</strong>，我们提供一系列服务，确保客户获得可靠的巴士零部件及快速的配送服务。</p>
+
+    <!-- 零部件订购 -->
+    <div id="services" class="service-section">
+        <img class="icon" src="零件图标.png" alt="零部件图标">
+        <div class="text">
+            <h2>零部件订购</h2>
+            <p>我们拥有丰富的巴士零部件库存，确保客户能够快速订购并获得所需配件。</p>
+        </div>
+    </div>
+    <!-- 专属配送 -->
+    <div class="service-section">
+        <img class="icon" src="配送图标.png" alt="配送图标">
+        <div class="text">
+            <h2>专属配送</h2>
+            <p>我们拥有自己的配送车队，确保您订购的零件可以安全、快速地送达。</p>
+        </div>
+    </div>
+
+    <!-- 电动客车配件预售 -->
+    <div class="service-section">
+        <img class="icon" src="ev.png" alt="电动客车图标">
+        <div class="text">
+            <h2>电动客车配件预售</h2>
+            <p>我们即将推出全系列电动客车配件，目前已开放预订。欲了解更多详情，请联系我们。</p>
+        </div>
+    </div>
+</div>
+
+<!-- WhatsApp 悬浮按钮 -->
+<a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
+<footer>
+    <p>&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+    }
+    function toggleLanguage() {
+        // 切换语言的代码
+    }
+</script>
+
+</body>
+</html>
