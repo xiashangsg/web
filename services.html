@@ -11,11 +11,13 @@
     
     <style>
         /* Main page styles */
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
+        html, body {
+            width: 100%;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             background-color: #f4f4f4;
+            font-family: 'Source Sans Pro', sans-serif;
         }
 
         .container {
@@ -175,13 +177,7 @@
             margin-bottom: 10px;
         }
 
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-        }
+        
 
         /* WhatsApp floating button style */
         .whatsapp-float-button {
@@ -230,12 +226,9 @@
                    <li><a href="index.html">HOME</a></li>
                     <li><a href="services.html">SERVICES</a></li>
                     <li><a href="company-profile-en.html?lang=zh">COMPANY PROFILE</a></li>
-                    <!--<li><a href="中文主页.html">中文</a><a href="services.html?lang=zh" onClick="toggleLanguage()"></a></li>-->
-
                 </ul>
             </nav>
         </header>
-
 
     <h1>Our Services</h1>
     <p>At <strong>XIA SHANG TRADING PTE LTD</strong>, we provide a range of services to ensure customers receive reliable bus parts and quick delivery.</p>
@@ -271,11 +264,23 @@
 <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
 </a>
+    
+    
 
-<footer>
-    <p>&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+<footer style="background: linear-gradient(to bottom, #333, #222); color: #aaa; padding: 20px 0; font-size: 12px; text-align: center; border-top: 0pt solid #444; border-bottom-width: 0pt; border-right-width: 0pt; border-left-width: 0pt;">
+    
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <div class="contact-info" style="margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px;">
+      <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, Singapore 597658</p>
+      <p style="margin: 5px 0;">Phone: +65 6862 3986 &nbsp; +65 8558 8100</p>
+      <p style="margin: 5px 0;">Email: <a href="mailto:xiashangtpl@outlook.com" style="color: #80cfa9; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin: 0; color: #777;">&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+    </div>
+  </div>
 </footer>
-
+</div>
 <script>
     function toggleMenu() {
         const menu = document.getElementById('menu');
