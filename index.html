@@ -337,8 +337,17 @@ nav ul {
 .contact-section {
     margin-bottom: 50px;
 }
+/* 联系信息部分样式修复 */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap; /* 确保在小屏幕时可以换行 */
+    gap: 20px;
+    padding: 40px;
+    justify-content: space-between; /* 在大屏幕上让每部分内容并排显示 */
+}
 
-        
+
+    
       /* 小屏幕优化 - 当屏幕宽度小于500px时的样式调整 */
 @media (max-width: 800px) {
     /* 隐藏汉堡菜单，始终显示完整导航栏 */
@@ -408,7 +417,6 @@ nav ul li a {
         font-size: 18px; /* 缩小logo文字 */
     }
   
-    }
 }
 
 /* 导航栏过渡效果 */
@@ -419,8 +427,6 @@ nav ul li a:hover {
     color: #007bff; /* 鼠标悬停时改变颜色 */
 }
 
-
-    
    /* 封面的小屏幕优化 */
 @media (max-width: 500px) {
     .hero {
@@ -448,8 +454,6 @@ nav ul li a:hover {
         text-align: left; /* 段落左对齐 */
     }
     
-   
-    
     /* 调整封面图片的背景 */
     .hero {
         background-size: cover; /* 确保背景图片覆盖整个容器 */
@@ -457,17 +461,11 @@ nav ul li a:hover {
     }
 }
 
-
-    
-
-    
-
     /* 产品部分容器 - 改为两列布局，减少卡片间距 */
    @media (max-width: 500px) { .product-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
-
     /* 产品卡片 - 使卡片在小屏幕上充满父容器，并调整卡片内边距 */
     .card {
         max-width: 100%; /* 卡片宽度为100% */
@@ -506,7 +504,6 @@ nav ul li a:hover {
         word-wrap: break-word; /* 自动换行 */
         
     }
-
     /* 供应链容器 - 为模块增加内边距，确保文本不紧贴边缘 */
     .sc-container {
         padding: 10px;
@@ -533,10 +530,7 @@ nav ul li a:hover {
         font-size: 15px;
     }
 
-    /* 地图容器 - 缩小地图高度 */
-    .map-container {
-        height: 150px;
-    }
+    
 }
 
 </style>
@@ -659,8 +653,8 @@ nav ul li a:hover {
             </div>
         </div>
 
-      <!-- 联系信息和地图部分 -->
-<div class="contact-section" style="display: flex; align-items: flex-start; gap: 20px; padding: 40px; margin: 0 10px;">
+    <!-- 联系信息和地图部分 -->
+<div class="contact-section" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 40px; margin: 0 10px; justify-content: space-between; align-items: flex-start;">
     <!-- 联系信息部分 -->
     <div class="contact-info" style="flex: 2; display: flex; flex-wrap: wrap; gap: 20px;">
         <div style="flex: 1; min-width: 200px;">
@@ -678,10 +672,10 @@ nav ul li a:hover {
         </div>
         <!-- 微信部分 -->
         <div style="flex: 1; min-width: 200px;">
-          <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">WeChat:</h2>
-            <p><strong>WeChat ID:&nbsp; x85588100</strong></p> <!-- 在这里替换成实际的微信号 -->
-          <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 20px;">WeChat QR Code:</h2>
-          <img src="微信.png" alt="WeChat QR Code" style="max-width: 150px; height: auto; border: 1px solid #ccc;"> <!-- 替换为实际的二维码图片路径 -->
+            <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">WeChat:</h2>
+            <p><strong>WeChat ID:&nbsp; x85588100</strong></p>
+            <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 20px;">WeChat QR Code:</h2>
+            <img src="微信.png" alt="WeChat QR Code" style="max-width: 150px; height: auto; border: 1px solid #ccc;">
         </div>
         <!-- 工作时间部分 -->
         <div style="flex: 1; min-width: 200px;">
@@ -695,15 +689,12 @@ nav ul li a:hover {
         </div>
     </div>
 
-    <!-- 地图部分 -->
+   <!-- 地图部分 -->
     <div class="map-container" style="flex: 1; max-width: 400px; height: 300px;">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7967.482768162027!2d103.75525304070282!3d1.3336943983020481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da111f2e1b7abf%3A0x66f6b2e1f0170e2c!2s32%20Old%20Toh%20Tuck%20Rd%2C%20Singapore%20597658!5e0!3m2!1sen!2ssg!4v1690298999990!5m2!1sen!2ssg"
             width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
 </div>
-
-
-
 
         <!-- 页脚部分 -->
       <footer style="background: linear-gradient(to bottom, #333, #222); color: #aaa; padding: 20px 0; font-size: 12px; text-align: center; border-top: 1px solid #444;">
