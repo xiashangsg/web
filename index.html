@@ -9,11 +9,9 @@
     <!-- 导入字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-  
-    
+    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
     <style>
-       /* 调整LOGO和公司名的默认样式 */
+/* 调整LOGO和公司名的样式 */
 .logo img {
     width: 40px;
     height: 40px;
@@ -23,19 +21,18 @@
     font-size: 24px;
     font-weight: 600;
     color: #333;
-    text-decoration: none; /* 去掉下划线 */
+    text-decoration: none;
     display: flex;
     align-items: center;
 }
 
-/* 主页面的样式 */
+/* 主页面的基础样式 */
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* 容器样式 */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -48,7 +45,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -112,47 +109,20 @@ nav ul {
     transition: all 0.3s ease-in-out;
 }
 
-/* 小屏幕下的导航栏样式 */
-@media (max-width: 430px) {
-    nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #fff;
-        width: 100%;
-        flex-direction: column;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger.active + nav {
-        display: flex;
-    }
-}
-
 /* 封面部分 */
 .hero {
     position: relative;
     width: 100%;
     height: 400px;
-    background: url('cover-image.jpg') no-repeat center center;
+    background: url('封面.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    text-align: left;
 }
 
+/* 半透明黑色遮罩层 */
 .hero::after {
     content: "";
     position: absolute;
@@ -160,16 +130,29 @@ nav ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.25); /* 黑色半透明遮罩层 */
+    z-index: 2; /* 遮罩层的层级 */
 }
 
+/* 内容部分 */
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 3; /* 保证内容位于遮罩层上方 */
     font-size: 36px;
     font-weight: 700;
     padding: 0 20px;
+    text-align: left; /* 左对齐文字 */
 }
+
+/* 段落样式 */
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+
 
 /* 标题样式 */
 .main-title {
@@ -194,36 +177,22 @@ nav ul {
 
 /* 产品卡片样式 */
 .card {
-    background-color: #fff; /* 设置卡片背景颜色为白色 */
-    border-radius: 10px; /* 设置卡片的圆角半径为10px */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加卡片的阴影效果，模拟浮动感 */
-    transition: box-shadow 0.3s, transform 0.3s; /* 为阴影和位移设置过渡效果，持续时间为0.3秒 */
-    max-width: 300px; /* 设置卡片的最大宽度为300px */
-    text-align: center; /* 设置卡片内文字居中 */
-    display: flex; /* 使用flex布局，使内容能够灵活对齐 */
-    flex-direction: column; /* 设置子元素垂直排列 */
-    justify-content: center; /* 使内容垂直居中 */
-    align-items: center; /* 使内容水平居中 */
-}
-
-/* 针对小于500px宽度的设备的媒体查询 */
-@media (max-width: 500px) {
-    .card {
-        max-width: 150px;
-        min-width: 150px; /* 在小于500px宽度的屏幕上设置最小宽度为400px */
-        min-height: 50px; /* 设置卡片的最小高度 */
-    }
-    .product-container {
-        grid-template-columns: repeat(2, 1fr); /* 设置为两列布局 */
-        gap: 10px; /* 设置卡片之间的间距为10px */
-    }
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 鼠标悬浮时加深阴影效果 */
-    transform: translateY(-5px); /* 鼠标悬浮时卡片上移5px，增加浮动感 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
-
 
 .content {
     padding: 20px;
@@ -296,7 +265,7 @@ nav ul {
     margin-bottom: 20px;
 }
 
-/* 大屏幕样式 */
+
 @media (min-width: 768px) {
     .sc-container {
         flex-direction: row;
@@ -326,25 +295,6 @@ nav ul {
     }
 }
 
-/* 小屏幕样式 */
-@media (max-width: 430px) {
-    .sc-supply-section {
-        padding: 20px;
-    }
-
-    .sc-h2 {
-        font-size: 20px;
-    }
-
-    .sc-h3 {
-        font-size: 18px;
-    }
-
-    .sc-p {
-        font-size: 14px;
-    }
-}
-
 /* WhatsApp 悬浮按钮样式 */
 .whatsapp-float-button {
     position: fixed;
@@ -371,7 +321,7 @@ nav ul {
     }
 }
 
-/* 调整各个模块之间的外边距 */
+/* 调整模块之间的外边距 */
 .hero {
     margin-bottom: 60px;
 }
@@ -388,8 +338,209 @@ nav ul {
     margin-bottom: 50px;
 }
 
+        
+      /* 小屏幕优化 - 当屏幕宽度小于500px时的样式调整 */
+@media (max-width: 800px) {
+    /* 隐藏汉堡菜单，始终显示完整导航栏 */
+    .hamburger {
+        display: none; /* 隐藏汉堡菜单 */
+    }
 
-   </style>
+  /* header 样式，控制 logo 和导航栏在一行显示 */
+header {
+    display: flex;
+    justify-content: space-between; /* 保持Logo在左边，导航在右边 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 20px 8px; /* 上下和左右的内边距调整 */
+    gap: 20px; /* 控制Logo与导航之间的距离 */
+    background-color: #fff; /* 背景颜色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加底部阴影效果 */
+    width: 100%; /* 确保header占据整个可用宽度 */
+    flex-wrap: nowrap; /* 防止换行 */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 13px; /* 调整公司名的字体大小 */
+    font-weight: bold;
+    color: #333;
+    gap: 3px; /* 图标与公司名之间的间距 */
+    white-space: nowrap; /* 防止公司名称换行 */
+}
+
+.logo img {
+    width: 20px; /* 缩小图标大小 */
+    height: 20px;
+}
+
+/* 导航菜单 */
+nav ul {
+    list-style: none;
+    display: flex; /* 设置为flex，确保菜单项横向排列 */
+    gap: 10px; /* 调整菜单项之间的间距 */
+    padding: 0; /* 去除多余的内边距 */
+    margin: 0; /* 去除默认外边距 */
+    background-color: transparent; /* 保持背景透明 */
+    width: auto; /* 确保宽度根据内容自动调整 */
+    box-shadow: none; /* 去除阴影效果 */
+    justify-content: flex-end; /* 导航项靠右对齐 */
+}
+
+nav ul li {
+    display: inline-block; /* 确保列表项在一行内显示 */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333; /* 设置文字颜色 */
+    padding: 5 5px; /* 添加左右内边距，让链接有更多的点击区域 */
+    transition: color 0.3s ease;
+}
+
+    nav ul {
+        displ 10: flex; /* 始终显示导航栏，无需折叠 */
+        flex-direction: row; /* 保持导航栏横向排列 */
+        gap: 10px; /* 调整导航项之间的间距 */
+    logo {
+        font-size: 18px; /* 缩小logo文字 */
+    }
+  
+    }
+}
+
+/* 导航栏过渡效果 */
+nav ul {
+    transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover {
+    color: #007bff; /* 鼠标悬停时改变颜色 */
+}
+
+
+    
+   /* 封面的小屏幕优化 */
+@media (max-width: 500px) {
+    .hero {
+        height: 230px; /* 调整封面高度 */
+    }
+    
+    .hero-content {
+        font-size: 30px; /* 缩小标题字体 */
+        font-weight: 700; /* 标题字体加粗 */
+        line-height: 1; /* 设置标题的行距 */
+        letter-spacing: 1.2px; /* 增加字母间距 */
+        color: #FFF; /* 标题文字颜色 */
+        text-align: left; /* 文字左对齐 */
+        margin: 0; /*3移除外边距 */
+    }
+    
+    /* 段落样式 */
+    .hero-content p {
+        font-size: 14px; /* 段落文字字体 */
+        line-height: 1; /* 段落的行距 */
+        letter-spacing: 0.3px; /* 增加段落的字母间距 */
+        color: #FFF; /* 段落文字颜色，较淡的灰色 */
+        max-width: 100%; /* 宽度适应屏幕 */
+        margin-bottom: 30px; /* 段落与下方内容的间距 */
+        text-align: left; /* 段落左对齐 */
+    }
+    
+   
+    
+    /* 调整封面图片的背景 */
+    .hero {
+        background-size: cover; /* 确保背景图片覆盖整个容器 */
+        background-position: center; /* 背景图居中 */
+    }
+}
+
+
+    
+
+    
+
+    /* 产品部分容器 - 改为两列布局，减少卡片间距 */
+   @media (max-width: 500px) { .product-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* 产品卡片 - 使卡片在小屏幕上充满父容器，并调整卡片内边距 */
+    .card {
+        max-width: 100%; /* 卡片宽度为100% */
+        padding: 2px; /* 调整卡片内边距 */
+    }
+
+    /* 卡片标题 - 缩小标题字体大小 */
+    .content h2 {
+        font-size: 16px;
+    }
+
+    /* 卡片文本 - 缩小卡片文字描述 */
+    .content p {
+        font-size: 14px;
+       }}
+
+    /* 供应链部分 - 调整模块的内边距，左右留出空隙，避免内容紧贴边框 */
+    .sc-supply-section {
+        padding: 10px 10px; /* 设置上下内边距为10px，左右为20px */
+        ox-sizing: border-box; /* 确保内边距不会超出容器宽度 */
+    }
+
+    /* 供应链标题 - 缩小标题字体，增加自动换行处理 */
+    .sc-h3 {
+        font-size: 16px; /* 缩小字体 */
+        margin-bottom: 10px; /* 缩小标题底部间距 */
+        word-wrap: break-word; /* 自动换行 */
+        word-break: break-all; /* 遇到长单词时自动断行 */
+    }
+
+    /* 供应链段落 - 缩小段落字体，确保自动换行 */
+    .sc-p {
+        font-size: 14px; /* 缩小段落字体 */
+        line-height: 1.3; /* 调整行高 */
+        margin-bottom: 8px; /* 缩小段落底部间距 */
+        word-wrap: break-word; /* 自动换行 */
+        
+    }
+
+    /* 供应链容器 - 为模块增加内边距，确保文本不紧贴边缘 */
+    .sc-container {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 联系信息部分 - 在小屏幕上垂直排列 */
+    .contact-section {
+        flex-direction: column; /* 改为上下排列 */
+    }
+
+    /* 联系信息块 - 在小屏幕上每个块占据100%宽度 */
+    .contact-info {
+        flex: 1 1 100%;
+    }
+
+    /* 联系信息标题 - 缩小标题字体 */
+    .contact-info h2 {
+        font-size: 15px;
+    }
+
+    /* 联系信息内容 - 缩小段落字体 */
+    .contact-info p {
+        font-size: 15px;
+    }
+
+    /* 地图容器 - 缩小地图高度 */
+    .map-container {
+        height: 150px;
+    }
+}
+
+</style>
+
 
 </head>
 <body>
@@ -397,25 +548,20 @@ nav ul {
     <div class="container">
         <!-- 导航栏 -->
         <header>
-            <a href="#" class="logo">
-                <img src="logo-01.png" alt="Company Logo" width="40" height="40">
-                &nbsp;XIA SHANG TRADING PTE LTD
-            </a>
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <nav>
-                <ul>
-                   <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="company-profile-en.html?lang=zh">COMPANY PROFILE</a></li>
-                    <!--<li><a href="中文主页.html">中文</a><a href="services.html?lang=zh" onClick="toggleLanguage()"></a></li>-->
+    <a href="index.html" class="logo">
+        <img src="logo-01.png" alt="Company Logo" width="40" height="40">
+        &nbsp;XIA SHANG TRADING PTE LTD
+    </a>
+    <nav>
+        <ul>
+           <li><a href="index.html">HOME</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="company-profile-en.html?lang=zh">COMPANY PROFILE</a></li>
+        </ul>
+    </nav>
+</header>
 
-                </ul>
-            </nav>
-        </header>
+
 
         <!-- WhatsApp 悬浮按钮 -->
         <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
@@ -424,17 +570,13 @@ nav ul {
 
         <!-- 封面部分 -->
         
-      <div class="hero" style="position: relative; background: url('封面.jpg') no-repeat center center; background-size: cover; height: 400px;">
-       
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(225, 225, 225, 0.3);"></div>
-            <div class="hero-content">
-              <p style="font-size: 36px; font-weight: bold; margin: 0;">Premium Chinese bus parts for efficient&nbsp;&nbsp;</p>
-<p style="font-size: 36px; font-weight: bold; margin: 0;">and reliable vehicle performance.</p>
-                <p style="margin-top: 24px; font-size: 18px; max-width: 500px; line-height: 1.5; margin-bottom: 20px;">
-                    Comprehensive bus parts solutions, covering all key systems to support optimal performance and operational efficiency.
-                </p>
-            </div>
-        </div>
+      <div class="hero">
+    <div class="hero-content">
+        <h6>Premium Chinese bus parts for efficient and reliable vehicle performance</h6>
+<p>Comprehensive bus parts solutions, covering all key systems to support optimal performance and operational efficiency.</p>
+    </div>
+</div>
+
 
         <!-- 业务范围部分 -->
        <!-- 产品模块整体容器 -->
@@ -445,49 +587,49 @@ nav ul {
     <div id="custom-html-container">
         <div class="product-container">
             <!-- 产品内容卡片部分 -->
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Lighting Systems</h2>
                     <p class="card-text">Various types of headlights, lamps, and related accessories.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Braking & Suspension Systems</h2>
                     <p class="card-text">Brake systems, suspension components, and related parts.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Steering Components</h2>
                     <p class="card-text">Drive shafts, steering systems, assist pumps, and mirrors.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Engine & Power Systems</h2>
                     <p class="card-text">Engine parts, generators, filters, sensors, and more.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Transmission & Clutch Systems</h2>
                     <p class="card-text">Various types of gearboxes, clutches, and related components.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Body Components</h2>
                     <p class="card-text">Body parts, front and rear glass panels.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Filters & Fuel Tank Systems</h2>
                     <p class="card-text">Various filters, fuel tank parts, urea treatment systems.</p>
                 </div>
             </div>
-            <div class="card">
+          <div class="card">
                 <div class="content">
                     <h2 class="card-title">Miscellaneous Parts</h2>
                     <p class="card-text">Locks, brake components, belts, and more.</p>
@@ -579,25 +721,6 @@ nav ul {
 
 
 
-        <!-- JavaScript 功能，菜单切换和语言切换 -->
-        <script>
-             function toggleMenu() {
-        const nav = document.querySelector('nav ul');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-            function toggleLanguage() {
-                const currentLang = document.documentElement.lang;
-                if (currentLang === 'en-US') {
-                    document.documentElement.lang = 'zh-CN';
-                    window.location.href = 'index-zh.html'; // 跳转到中文网页
-                } else {
-                    document.documentElement.lang = 'en-US';
-                    window.location.href = 'index.html'; // 跳转到英文网页
-                }
-            }
-        </script>
-    </div>
 </body>
 </html>
 
