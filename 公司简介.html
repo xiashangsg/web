@@ -5,35 +5,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>联系我们 - 夏商贸易私人有限公司</title>
-    <!-- 导入字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>XIA SHANG TRADING PTE LTD - 公司简介</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
         }
+
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 40px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #fff;
+            background: #fff;
+            color: #333;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 60px;
         }
+
         .logo {
             font-size: 24px;
             font-weight: 600;
@@ -42,6 +42,7 @@
             display: flex;
             align-items: center;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -49,59 +50,203 @@
             display: flex;
             align-items: center;
         }
+
         nav ul li {
             margin: 0 15px;
         }
+
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-weight: 600;
+            transition: color 0.3s;
         }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
         }
+
         .hamburger div {
             width: 25px;
             height: 3px;
             background: #333;
             margin: 4px;
         }
+
         nav {
             display: flex;
         }
+
         @media (max-width: 768px) {
             nav {
                 display: none;
                 position: absolute;
                 top: 100%;
                 right: 0;
-                background-color: #fff;
+                background: #fff;
                 width: 100%;
                 flex-direction: column;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
+
             nav ul {
                 flex-direction: column;
-            }
-            nav ul li {
-                margin: 10px 0;
                 text-align: center;
             }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
             .hamburger {
                 display: flex;
             }
+
             .hamburger.active + nav {
                 display: flex;
             }
         }
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 40px 0;
+
+        .hero {
+            background: url('singapore2.webp') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
+            position: relative;
         }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .content-section {
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .content-section p,
+        .content-section ul {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .content-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer .footer-links {
+            margin-bottom: 15px;
+        }
+
+        footer .footer-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        footer .footer-links a:hover {
+            color: #007bff;
+        }
+
+        footer .footer-bottom {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        /* WhatsApp 悬浮按钮样式 */
+.whatsapp-float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.animated-bounce {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 调整各个模块之间的外边距 */
+.hero {
+    margin-bottom: 60px;
+}
     </style>
 </head>
 
@@ -109,25 +254,26 @@
     <div class="container">
         <!-- 导航栏 -->
         <header>
-            <a href="#" class="logo">
-                <img src="logo-01.png" alt="公司标志" width="40" height="40">&nbsp;夏商贸易私人有限公司
-            </a>
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <a href="中文主页.html" class="logo">
+                <img src="logo-01.png" alt="公司标志" width="40" height="40">
+                &nbsp;XIA SHANG TRADING PTE LTD
+          </a>
             <nav>
                 <ul>
-                    <li><a href="#home">主页</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#contact">联系我们</a></li>
-                    <li><a href="company-profile-en.html">公司简介</a></li>
+                    <li><a href="中文主页.html">主页</a></li>
+                    <li><a href="服务.html">服务</a></li>
+                    <li><a href="公司简介.html">公司简介</a></li>
+                    <li><a href="company-profile-en.html">EN</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- 英雄部分 -->
+        <!-- WhatsApp 悬浮按钮 -->
+        <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        </a>
+
+        <!-- 封面部分 -->
         <div class="hero">
             <h1>公司简介</h1>
         </div>
@@ -135,51 +281,47 @@
         <!-- 公司信息部分 -->
         <div class="content-section">
             <h2>关于我们</h2>
-            <p><strong>夏商贸易私人有限公司</strong> 成立于2009年，专门从中国采购优质的巴士零件。凭借多年的经验，我们已建立了强大的供应链网络，能够快速满足客户的需求，确保其车辆的高效运营和长期可靠性。</p>
+            <p><strong>XIA SHANG TRADING PTE LTD</strong> 成立于2009年，专注于从中国采购优质的客车零部件。凭借多年的经验，我们建立了强大的供应链网络，以快速满足客户的需求，确保他们的车辆高效运行和长期可靠性。</p>
         </div>
 
         <!-- 我们的优势部分 -->
         <div class="content-section">
             <h2>我们的优势</h2>
             <ul>
-                <li><strong>全面的零部件供应：</strong> 我们拥有广泛的现货库存，确保所有重要部件都能立即使用。</li>
-                <li><strong>灵活的采购：</strong> 我们提供特殊零部件的定制采购选项，提供满足特定需求的解决方案。</li>
-                <li><strong>高效的本地配送：</strong> 我们拥有专属车队，确保快速、安全的配送，最大限度减少客户的停机时间。</li>
+                <li><strong>全面的零部件供应：</strong> 我们保持多种零部件库存，确保所有关键组件的即时供应。</li>
+                <li><strong>灵活的采购方式：</strong> 我们为特殊零部件提供定制的采购选项，提供满足特定需求的解决方案。</li>
+                <li><strong>高效的本地交付：</strong> 我们的运输车辆提供快速安全的交付，最大限度减少客户的停机时间。</li>
             </ul>
         </div>
 
-        <!-- 使命和愿景部分 -->
+        <!-- 使命与愿景部分 -->
         <div class="content-section">
-            <h2>我们的使命和愿景</h2>
-            <p>我们的愿景是成为新加坡巴士零部件市场中的可靠合作伙伴。我们旨在提供稳定的产品质量和卓越的服务，确保客户在需要时能够及时获取所需的零件，保持车辆的最佳状态。</p>
+            <h2>我们的使命与愿景</h2>
+            <p>我们的愿景是成为新加坡客车零部件市场值得信赖的合作伙伴。我们致力于提供稳定的产品质量和卓越的服务，确保客户在需要时及时获得所需的零部件，以保持其车辆的最佳状态。</p>
         </div>
 
-        <!-- 核心价值部分 -->
+        <!-- 核心价值观部分 -->
         <div class="content-section">
-            <h2>核心价值</h2>
+            <h2>核心价值观</h2>
             <ul>
-                <li><strong>客户至上：</strong> 我们优先考虑客户需求，提供超出预期的定制解决方案。</li>
-                <li><strong>质量保证：</strong> 我们遵循严格的质量标准，确保所有零部件达到最高要求。</li>
+                <li><strong>客户至上：</strong> 我们优先考虑客户需求，提供超越期望的定制解决方案。</li>
+                <li><strong>质量保证：</strong> 我们严格遵守质量标准，确保所有零部件符合最高要求。</li>
                 <li><strong>高效服务：</strong> 我们不断优化供应链，为所有客户提供快速可靠的服务。</li>
             </ul>
         </div>
 
         <!-- 页脚部分 -->
-        <footer>
-            <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div class="footer-links" style="margin-bottom: 20px;">
-                    <a href="index.html" style="color: #fff; margin: 0 15px; text-decoration: none;">主页</a>
-                    <a href="#about" style="color: #fff; margin: 0 15px; text-decoration: none;">关于我们</a>
-                    <a href="company-profile-en.html" style="color: #fff; margin: 0 15px; text-decoration: none;">公司简介</a>
-                    <a href="#contact" style="color: #fff; margin: 0 15px; text-decoration: none;">联系我们</a>
-                    <a href="#privacy-policy" style="color: #fff; margin: 0 15px; text-decoration: none;">隐私政策</a>
-                </div>
-                <div class="contact-info" style="margin-bottom: 20px;">
-                    <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, 新加坡 597658</p>
-                    <p style="margin: 5px 0;">电话: 6862 3986 | 邮箱: <a href="mailto:xiashangtpl@outlook.com" style="color: #25D366; text-decoration: none;">xiashangtpl@outlook.com</a></p>
-                </div>
-                <div class="footer-bottom">
-                    <p style="margin: 0;">&copy; 2024 夏商贸易私人有限公司. 版权所有.</p>
+        <footer style="background: linear-gradient(to bottom, #333, #222); color: #aaa; padding: 20px 0; font-size: 12px; text-align: center; border-top: 1px solid #444;">
+            <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
+                <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+                    <div class="contact-info" style="margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px;">
+                        <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, Singapore 597658</p>
+                        <p style="margin: 5px 0;">电话: +65 6862 3986 &nbsp; +65 8558 8100</p>
+                        <p style="margin: 5px 0;">邮箱: <a href="mailto:xiashangtpl@outlook.com" style="color: #80cfa9; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+                    </div>
+                    <div class="footer-bottom">
+                        <p style="margin: 0; color: #777;">&copy; 2024 XIA SHANG TRADING PTE LTD. 版权所有。</p>
+                    </div>
                 </div>
             </div>
         </footer>

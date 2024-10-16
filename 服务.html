@@ -211,27 +211,29 @@
 </head>
 <body>
 
-<!-- 导航栏 -->
+ <!-- 主容器 -->
     <div class="container">
-<header>
-    <a href="#" class="logo">
-        <img src="logo-01.png" alt="Company Logo" width="40" height="40">
-        &nbsp;XIA SHANG TRADING PTE LTD
-    </a>
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <nav>
-        <ul id="menu">
-            <li><a href="主页.html">HOME</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="company-profile-en.html">COMPANY PROFILE</a></li>
-            <li><a href="#" onclick="toggleLanguage()">EN/</a><a href="中文主页.html">中文</a></li>
-        </ul>
-    </nav>
-</header>
+        <!-- 导航栏 -->
+        <header>
+          <a href="中文主页.html" class="logo">
+                <img src="logo-01.png" alt="Company Logo" width="40" height="40">
+                &nbsp;XIA SHANG TRADING PTE LTD
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul>
+                   <li><a href="中文主页.html">主页</a></li>
+                    <li><a href="服务.html">服务</a></li>
+                    <li><a href="公司简介.html">公司简介</a></li>
+                    <li><a href="services.html">EN</a><a href="services.html?lang=zh" onClick="toggleLanguage()"></a></li>
+
+                </ul>
+            </nav>
+        </header>
 
 
     <h1>我们的服务</h1>

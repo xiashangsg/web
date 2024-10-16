@@ -17,11 +17,8 @@
 
     <!-- 作者 -->
     <meta name="author" content="XIA SHANG TRADING PTE LTD">
-</head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 结构化数据 (JSON-LD) -->
+
+   <!-- 结构化数据 (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -56,12 +53,20 @@
       
     }
     </script>
-    
-    <title>XIA SHANG TRADING PTE LTD</title>
+  
+    <!-- 预连接到 Google Fonts 服务器，提升字体加载速度 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 导入字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+   
+    <!-- 引入 Anton 字体 -->
+     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+
+
+
     <style>
 /* 调整LOGO和公司名的样式 */
 .logo img {
@@ -161,64 +166,130 @@ nav ul {
     transition: all 0.3s ease-in-out;
 }
 
-/* 封面部分 */
+
+        
+/* 封面部分（包括半透明遮罩层） */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background: url('封面.jpg') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+    position: relative; /* 使元素相对定位，方便定位子元素 */
+    width: 100%; /* 宽度占据父元素的100% */
+    height: 400px; /* 设置固定的高度为400像素 */
+    background: url('封面.jpg') no-repeat center center; /* 背景图片，居中且不重复 */
+    background-size: cover; /* 背景图片覆盖整个容器，保持比例 */
+    display: flex; /* 使用 flex 布局对齐内容 */
+    align-items: center; /* 垂直方向居中对齐 */
+    justify-content: center; /* 水平方向居中对齐 */
+    color: #fff; /* 字体颜色设置为白色 */
 }
 
-/* 半透明黑色遮罩层 */
 .hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.25); /* 黑色半透明遮罩层 */
-    z-index: 2; /* 遮罩层的层级 */
+    content: ""; /* 添加一个空的伪元素 */
+    position: absolute; /* 绝对定位，覆盖整个 .hero 区域 */
+    top: 0; /* 伪元素上边缘与父元素的顶部对齐 */
+    left: 0; /* 伪元素左边缘与父元素的左侧对齐 */
+    width: 100%; /* 宽度占据父元素的100% */
+    height: 100%; /* 高度占据父元素的100% */
+    background: rgba(255, 255, 255, 0.15); /* 设置半透明白色背景作为遮罩层 */
+    z-index: 2; /* 设置遮罩层在背景之上，但在内容之下 */
 }
 
-/* 内容部分 */
+/* 为 .hero-content 添加左右留白的 padding */
 .hero-content {
-    position: relative;
+    position: relative; /* 相对定位，保证在遮罩层之上 */
     z-index: 3; /* 保证内容位于遮罩层上方 */
-    font-size: 36px;
-    font-weight: 700;
-    padding: 0 20px;
-    text-align: left; /* 左对齐文字 */
+    padding: 0 5vw; /* 左右各 5vw 的内边距，控制内容的左右留白，随视口宽度变化 */
+    text-align: left; /* 左对齐文字内容 */
 }
 
-/* 段落样式 */
+/* 标题样式 - 使用 Anton 字体，调整上下和左右间距 */
+.hero-content h6 {
+    font-family: 'Cabin Sketch', sans-serif; /* 使用 Anton 字体 */
+    font-size: 46px; /* 字体大小设置为36像素 */
+    font-weight: 700; /* 设置字体粗细为700 */
+    color: #fff; /* 字体颜色设置为白色 */
+    margin-top: 10px; /* 设置标题上方的外边距为10像素 */
+    margin-bottom: 25px; /* 设置标题下方的外边距为25像素 */
+    margin-left: 5vw; /* 设置左侧的外边距为5vw，随视口宽度变化 */
+    margin-right: 5vw; /* 设置右侧的外边距为5vw，随视口宽度变化 */
+    line-height: 1.1; /* 设置标题行间距为 1.1 倍 */
+}
+
+/* 段落样式 - 使用 Cabin Sketch 字体，调整上下和左右间距 */
 .hero-content p {
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 500px;
-    margin-bottom: 20px;
+    font-family: 'Cabin Sketch', cursive; /* 使用 Cabin Sketch 字体 */
+    font-size: 22px; /* 字体大小设置为18像素 */
+    line-height: 1.5; /* 行高设置为1.5倍，增加可读性 */
+    color: #fff; /* 字体颜色设置为白色 */
+    margin-top: 15px; /* 设置段落上方的外边距为15像素 */
+    margin-bottom: 20px; /* 设置段落下方的外边距为20像素 */
+    margin-left: 5vw; /* 设置左侧的外边距为5vw，随视口宽度变化 */
+    margin-right: 5vw; /* 设置右侧的外边距为5vw，随视口宽度变化 */
 }
 
 
 
-/* 标题样式 */
+/* 封面的小屏幕优化 */
+@media (max-width: 560px) {
+    .hero {
+        height: 230px; /* 调整封面高度 */
+        background-size: cover; /* 确保背景图片覆盖整个容器 */
+        background-position: center; /* 背景图居中 */
+    }
+    
+    .hero-content h6 {
+        font-size: 22px; /* 缩小标题字体 */
+        font-weight: 100; /* 设置标题的字体粗细 */
+        line-height: 1; /* 设置标题的行距 */
+        letter-spacing: 1.2px; /* 增加字母间距 */
+        color: #FFF; /* 标题文字颜色 */
+        margin: 0; /* 移除默认的外边距 */
+        padding-left: 30px; /* 设置标题左侧的留白 */
+        padding-right: 30px; /* 设置标题右侧的留白 */
+    }
+    
+    .hero-content p {
+        font-size: 14px; /* 段落文字字体 */
+        line-height: 1; /* 段落的行距 */
+        letter-spacing: 0.3px; /* 增加段落的字母间距 */
+        color: #FFF; /* 段落文字颜色，较淡的灰色 */
+        max-width: 100%; /* 宽度适应屏幕 */
+        margin-bottom: 15px; /* 段落与下方内容的间距 */
+        text-align: left; /* 段落左对齐 */
+        padding-left: 10px; /* 设置段落左侧的留白 */
+        padding-right: 10px; /* 设置段落右侧的留白 */
+    }
+}
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+/* 主标题样式 */
 .main-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Cabin Sketch', sans-serif; /* 也可以使用 Anton 字体 */
     font-size: 24px;
     font-weight: 600;
     color: #4CAF50;
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 1px solid #4CAF50;
     padding-bottom: 15px;
+    border-bottom: 1px solid #4CAF50;
 }
 
-/* 产品内容容器 */
+        
+        
+                                                      /* 产品内容容器 */
 .product-container {
     display: grid;
     gap: 20px;
@@ -462,7 +533,7 @@ nav ul li a {
 }
 
     nav ul {
-        displ 10: flex; /* 始终显示导航栏，无需折叠 */
+        display: flex; /* 始终显示导航栏，无需折叠 */
         flex-direction: row; /* 保持导航栏横向排列 */
         gap: 10px; /* 调整导航项之间的间距 */
     logo {
@@ -479,39 +550,7 @@ nav ul li a:hover {
     color: #007bff; /* 鼠标悬停时改变颜色 */
 }
 
-   /* 封面的小屏幕优化 */
-@media (max-width: 500px) {
-    .hero {
-        height: 230px; /* 调整封面高度 */
-    }
-    
-    .hero-content {
-        font-size: 30px; /* 缩小标题字体 */
-        font-weight: 700; /* 标题字体加粗 */
-        line-height: 1; /* 设置标题的行距 */
-        letter-spacing: 1.2px; /* 增加字母间距 */
-        color: #FFF; /* 标题文字颜色 */
-        text-align: left; /* 文字左对齐 */
-        margin: 0; /*3移除外边距 */
-    }
-    
-    /* 段落样式 */
-    .hero-content p {
-        font-size: 14px; /* 段落文字字体 */
-        line-height: 1; /* 段落的行距 */
-        letter-spacing: 0.3px; /* 增加段落的字母间距 */
-        color: #FFF; /* 段落文字颜色，较淡的灰色 */
-        max-width: 100%; /* 宽度适应屏幕 */
-        margin-bottom: 30px; /* 段落与下方内容的间距 */
-        text-align: left; /* 段落左对齐 */
-    }
-    
-    /* 调整封面图片的背景 */
-    .hero {
-        background-size: cover; /* 确保背景图片覆盖整个容器 */
-        background-position: center; /* 背景图居中 */
-    }
-}
+  
 
     /* 产品部分容器 - 改为两列布局，减少卡片间距 */
    @media (max-width: 500px) { .product-container {
@@ -537,7 +576,7 @@ nav ul li a:hover {
     /* 供应链部分 - 调整模块的内边距，左右留出空隙，避免内容紧贴边框 */
     .sc-supply-section {
         padding: 10px 10px; /* 设置上下内边距为10px，左右为20px */
-        ox-sizing: border-box; /* 确保内边距不会超出容器宽度 */
+        box-sizing: border-box; /* 确保内边距不会超出容器宽度 */
     }
 
     /* 供应链标题 - 缩小标题字体，增加自动换行处理 */
@@ -603,6 +642,7 @@ nav ul li a:hover {
            <li><a href="index.html">HOME</a></li>
             <li><a href="services.html">SERVICES</a></li>
             <li><a href="company-profile-en.html?lang=zh">COMPANY PROFILE</a></li>
+            <li><a href="中文主页.html">中文</a></li>
         </ul>
     </nav>
 </header>
@@ -664,10 +704,10 @@ nav ul li a:hover {
                 </div>
             </div>
           <div class="card">
-                <div class="content">
-                    <h2 class="card-title">Body Components</h2>
-                    <p class="card-text">Body parts, front and rear glass panels.</p>
-                </div>
+            <div class="content">
+              <h2 class="card-title">Body Components</h2>
+                <p class="card-text">&nbsp; &nbsp;Body parts, front and rear glass panels.&nbsp; &nbsp;</p>
+              </div>
             </div>
           <div class="card">
                 <div class="content">

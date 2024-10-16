@@ -5,398 +5,633 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>XIA SHANG TRADING PTE LTD</title>
+    
+    <!-- 网站标题 -->
+    <title>XIA SHANG TRADING PTE LTD - Bus Parts Distribution Singapore</title>
+    
+    <!-- 优化关键词 (中文和英文) -->
+    <meta name="keywords" content="中国客车配件, 新加坡中国客车, 新加坡客车配件, 客车配件SG, bus parts Singapore, bus spare parts, OEM bus parts, Chinese bus parts Singapore, bus accessories, electric bus parts, coach spare parts, bus repair Singapore, Yutong bus parts, Volvo bus parts, MAN bus parts Singapore, Isuzu bus parts Singapore">
+
+    <!-- 页面描述 -->
+    <meta name="description" content="XIA SHANG TRADING PTE LTD specializes in distributing Chinese bus parts and accessories in Singapore, offering reliable solutions for bus performance, including electric vehicle parts and OEM spares for brands like Volvo, Yutong, MAN, and Isuzu.">
+
+    <!-- 作者 -->
+    <meta name="author" content="XIA SHANG TRADING PTE LTD">
+
+   <!-- 结构化数据 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "XIA SHANG TRADING PTE LTD",
+      "url": "https://www.xiashangtpl.com",
+      "logo": "https://xiashangtpl.com/logo-01.png",
+      "image": "https://xiashangtpl.com/logo-01.png", 
+      "description": "XIA SHANG TRADING PTE LTD specializes in distributing Chinese bus parts and accessories in Singapore, offering reliable solutions for bus performance, including electric vehicle parts and OEM spares for brands like Volvo, Yutong, MAN, and Isuzu.",
+      "telephone": "+65 6862 3986",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "32 Old Toh Tuck Road, Ibiz Center #01-03",
+        "addressLocality": "Singapore",
+        "postalCode": "597658",
+        "addressCountry": "SG"
+      },
+      "openingHours": "Mo-Fr 09:00-12:00,13:00-18:00 Sa 09:00-12:00,13:00-16:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+65 6862 3986",
+        "contactType": "Customer Service",
+        "areaServed": "SG",
+        "availableLanguage": ["English", "Chinese"]
+      },
+      "priceRange": "$$",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 1.3336944,
+        "longitude": 103.755253
+      }
+      
+    }
+    </script>
+  
+    <!-- 预连接到 Google Fonts 服务器，提升字体加载速度 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 导入字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+   
+    <!-- 引入 Anton 字体 -->
+     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
 
-   <style>
-    /* 主页面的样式 */
-    body {
-        font-family: 'Source Sans Pro', sans-serif; /* 使用 Source Sans Pro 字体 */
-        margin: 0; /* 移除页面默认的外边距 */
-        padding: 0; /* 移除页面默认的内边距 */
-    }
-       
-.container .contact-section {
+
+
+    <style>
+/* 调整LOGO和公司名的样式 */
+.logo img {
+    width: 40px;
+    height: 40px;
 }
 
-    .container {
-    width: 100%; /* 设置容器宽度为 100% */
-    max-width: 1200px; /* 最大宽度为 1200px */
-    margin: auto; /* 自动居中 */
-    padding: 20px; /* 内边距为 20px */
-    }
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
 
-    header {
-        display: flex; /* 使用 flex 布局 */
-        justify-content: space-between; /* 主轴方向上的元素均匀分布 */
-        align-items: center; /* 交叉轴方向上元素居中 */
-        padding: 20px; /* 内边距为 20px */
-        background: #fff; /* 背景颜色为白色 */
-        color: #333; /* 文字颜色为深灰色 */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-    }
+/* 主页面的基础样式 */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    .logo {
-    font-size: 24px; /* 字体大小为 24px */
-    font-weight: 600; /* 字体加粗 */
-    color: #333; /* 文字颜色为深灰色 */
-    text-decoration: none; /* 去除下划线 */
-    display: flex; /* 使用 flex 布局 */
-    align-items: center; /* 交叉轴方向居中 */
-    padding-bottom: 0px;
-    }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
 
+/* 导航栏样式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+}
+
+/* 响应式导航栏 */
+@media (max-width: 768px) {
     nav ul {
-        list-style: none; /* 去除列表项的默认样式 */
-        padding: 0; /* 移除内边距 */
-        margin: 0; /* 移除外边距 */
-        display: flex; /* 使用 flex 布局 */
-        align-items: center; /* 交叉轴方向居中 */
-    }
-
-    nav ul li {
-        margin: 0 15px; /* 左右外边距为 15px */
-    }
-
-    nav ul li a {
-        text-decoration: none; /* 去除链接下划线 */
-        color: #333; /* 链接文字颜色为深灰色 */
-        font-weight: 600; /* 字体加粗 */
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .hamburger {
-        display: none; /* 默认隐藏 */
-        flex-direction: column; /* 子元素垂直排列 */
-        cursor: pointer; /* 鼠标悬浮时显示手型 */
+        display: flex;
     }
 
-    .hamburger div {
-        width: 25px; /* 宽度为 25px */
-        height: 3px; /* 高度为 3px */
-        background: #333; /* 背景颜色为深灰色 */
-        margin: 4px; /* 子元素之间的间距为 4px */
+    .hamburger.active + nav ul {
+        display: flex;
     }
+}
 
-    nav {
-        display: flex; /* 使用 flex 布局 */
-    }
+/* 导航栏过渡效果 */
+nav ul {
+    transition: all 0.3s ease-in-out;
+}
 
-    @media (max-width: 768px) {
-        nav {
-            display: none; /* 隐藏导航栏 */
-            position: absolute; /* 绝对定位 */
-            top: 100%; /* 顶部与导航栏对齐 */
-            right: 0; /* 靠右对齐 */
-            background: #fff; /* 背景颜色为白色 */
-            width: 100%; /* 宽度为 100% */
-            flex-direction: column; /* 子元素垂直排列 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-        }
 
-        nav ul {
-            flex-direction: column; /* 子元素垂直排列 */
-        }
+        
+/* 封面部分（包括半透明遮罩层） */
+.hero {
+    position: relative; /* 使元素相对定位，方便定位子元素 */
+    width: 100%; /* 宽度占据父元素的100% */
+    height: 400px; /* 设置固定的高度为400像素 */
+    background: url('封面.jpg') no-repeat center center; /* 背景图片，居中且不重复 */
+    background-size: cover; /* 背景图片覆盖整个容器，保持比例 */
+    display: flex; /* 使用 flex 布局对齐内容 */
+    align-items: center; /* 垂直方向居中对齐 */
+    justify-content: center; /* 水平方向居中对齐 */
+    color: #fff; /* 字体颜色设置为白色 */
+}
 
-        nav ul li {
-            margin: 10px 0; /* 上下外边距为 10px */
-            text-align: center; /* 文本居中 */
-        }
+.hero::after {
+    content: ""; /* 添加一个空的伪元素 */
+    position: absolute; /* 绝对定位，覆盖整个 .hero 区域 */
+    top: 0; /* 伪元素上边缘与父元素的顶部对齐 */
+    left: 0; /* 伪元素左边缘与父元素的左侧对齐 */
+    width: 100%; /* 宽度占据父元素的100% */
+    height: 100%; /* 高度占据父元素的100% */
+    background: rgba(255, 255, 255, 0.10); /* 设置半透明白色背景作为遮罩层 */
+    z-index: 2; /* 设置遮罩层在背景之上，但在内容之下 */
+}
 
-        .hamburger {
-            display: flex; /* 显示汉堡菜单 */
-        }
+/* 为 .hero-content 添加左右留白的 padding */
+.hero-content {
+    position: relative; /* 相对定位，保证在遮罩层之上 */
+    z-index: 3; /* 保证内容位于遮罩层上方 */
+    padding: 0 5vw; /* 左右各 5vw 的内边距，控制内容的左右留白，随视口宽度变化 */
+    text-align: left; /* 左对齐文字内容 */
+}
 
-        .hamburger.active + nav {
-            display: flex; /* 当汉堡菜单激活时显示导航栏 */
-        }
-    }
+/* 标题样式 - 使用 Anton 字体，调整上下和左右间距 */
+.hero-content h6 {
+    font-family: 'Cabin Sketch', sans-serif; /* 使用 Anton 字体 */
+    font-size: 36px; /* 字体大小设置为36像素 */
+    font-weight: 600; /* 设置字体粗细为700 */
+    color: #fff; /* 字体颜色设置为白色 */
+    margin-top: 10px; /* 设置标题上方的外边距为10像素 */
+    margin-bottom: 35px; /* 设置标题下方的外边距为25像素 */
+    margin-left: 5vw; /* 设置左侧的外边距为5vw，随视口宽度变化 */
+    margin-right: 5vw; /* 设置右侧的外边距为5vw，随视口宽度变化 */
+    line-height: 1.5; /* 设置标题行间距为 1.1 倍 */
+}
 
+/* 段落样式 - 使用 Cabin Sketch 字体，调整上下和左右间距 */
+.hero-content p {
+    font-family: 'Cabin Sketch', cursive; /* 使用 Cabin Sketch 字体 */
+    font-size: 22px; /* 字体大小设置为18像素 */
+    line-height: 1.5; /* 行高设置为1.5倍，增加可读性 */
+    color: #fff; /* 字体颜色设置为白色 */
+    margin-top: 15px; /* 设置段落上方的外边距为15像素 */
+    margin-bottom: 5px; /* 设置段落下方的外边距为20像素 */
+    margin-left: 5vw; /* 设置左侧的外边距为5vw，随视口宽度变化 */
+    margin-right: 5vw; /* 设置右侧的外边距为5vw，随视口宽度变化 */
+}
+
+
+
+/* 封面的小屏幕优化 */
+@media (max-width: 560px) {
     .hero {
-        position: relative; /* 相对定位 */
-        width: 100%; /* 宽度为 100% */
-        height: 400px; /* 高度为 400px */
-        background: url('cover-image.jpg') no-repeat center center; /* 背景图像设置 */
-        background-size: cover; /* 背景图像填充方式 */
-        display: flex; /* 使用 flex 布局 */
-        align-items: center; /* 垂直居中 */
-        justify-content: center; /* 水平居中 */
-        color: #fff; /* 文字颜色为白色 */
-        text-align: left; /* 文本居左对齐 */
+        height: 230px; /* 调整封面高度 */
+        background-size: cover; /* 确保背景图片覆盖整个容器 */
+        background-position: center; /* 背景图居中 */
+    }
+    
+    .hero-content h6 {
+        font-size: 20px; /* 缩小标题字体 */
+        font-weight: 500; /* 设置标题的字体粗细 */
+        line-height: 1.15; /* 设置标题的行距 */
+        letter-spacing: 1.3px; /* 增加字母间距 */
+        color: #FFF; /* 标题文字颜色 */
+        margin: 0; /* 移除默认的外边距 */
+        padding-left: 30px; /* 设置标题左侧的留白 */
+        padding-right: 30px; /* 设置标题右侧的留白 */
+    }
+    
+    .hero-content p {
+        font-size: 14px; /* 段落文字字体 */
+        line-height: 1.2; /* 段落的行距 */
+        letter-spacing: 0.3px; /* 增加段落的字母间距 */
+        color: #FFF; /* 段落文字颜色，较淡的灰色 */
+        max-width: 100%; /* 宽度适应屏幕 */
+        margin-bottom: 10px; /* 段落与下方内容的间距 */
+        text-align: left; /* 段落左对齐 */
+        padding-left: 10px; /* 设置段落左侧的留白 */
+        padding-right: 10px; /* 设置段落右侧的留白 */
+    }
+}
+
+
+
         
-    }
-
-    .hero::after {
-        content: ""; /* 添加一个空内容的伪元素 */
-        position: absolute; /* 绝对定位 */
-        top: 0; /* 顶部对齐 */
-        left: 0; /* 左对齐 */
-        width: 100%; /* 宽度为 100% */
-        height: 100%; /* 高度为 100% */
-        background: rgba(0, 0, 0, 0.4); /* 黑色背景且透明度为 0.4 */
         
-    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
-    .hero-content {
-        position: relative; /* 相对定位 */
-        z-index: 1; /* 叠层顺序，确保在背景伪元素之上 */
-
-
-        font-size: 36px; /* 字体大小为 36px */
-        font-weight: 700; /* 字体加粗 */
-        padding: 0 20px; /* 左右内边距为 20px */
-    }
-
-    /* 修改标题样式，突出显示 */
+/* 主标题样式 */
 .main-title {
-    font-family: 'Poppins', sans-serif; /* 使用 Poppins 字体 */
-    font-size: 26px; /* 增加字体大小 */
-    font-weight: 600; /* 字体加粗 */
-    color: #; /* 标题颜色为绿色 */
-    text-align: center; /* 标题居中对齐 */
-    margin-bottom: 30px; /* 标题与下方内容的间距 */
-    border-bottom: 1px solid #4CAF50; /* 标题底部的下划线 */
-    padding-bottom: 15px; /* 标题底部内边距 */
+    font-family: 'Cabin Sketch', sans-serif; /* 也可以使用 Anton 字体 */
+    font-size: 24px;
+    font-weight: 600;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #4CAF50;
 }
-    #custom-html-container {
-        display: flex; /* 使用 flex 布局 */
-        justify-content: center; /* 水平居中 */
-        align-items: center; /* 垂直居中 */
-        width: 100%; /* 宽度为 100% */
-        max-width: 1200px; /* 最大宽度为 1200px */
-        margin: 0 auto; /* 居中对齐 */
-        flex-direction: column; /* 子元素垂直排列 */
-    }
 
-   /* 修改产品容器的样式 */
+        
+        
+                                                      /* 产品内容容器 */
 .product-container {
-    display: grid; /* 使用网格布局 */
-    gap: 20px; /* 网格项之间的间距为 20px */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 响应式网格布局 */
-    justify-items: center; /* 网格项水平居中 */
-    width: 100%; /* 宽度为父容器的 100% */
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    width: 100%;
 }
 
-    /* 产品卡片样式 */
+/* 产品卡片样式 */
 .card {
-    background-color: #ffffff; /* 卡片背景色为白色 */
-    border-radius: 10px; /* 卡片的圆角 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-    transition: box-shadow 0.3s, transform 0.3s; /* 过渡效果 */
-    cursor: pointer; /* 鼠标悬浮时显示手型 */
-    overflow: hidden; /* 隐藏超出部分 */
-    max-width: 300px; /* 卡片最大宽度 */
-    text-align: center; /* 卡片文本居中 */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 鼠标悬浮时阴影加深 */
-    transform: translateY(-5px); /* 鼠标悬浮时卡片上移 5px */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .content {
-    padding: 20px; /* 内容内边距 */
+    padding: 20px;
 }
 
 .content h2 {
-    margin: 0; /* 移除外边距 */
-    font-size: 18px; /* 字体大小为 18px */
-    font-weight: 700; /* 字体加粗 */
-    color: #333; /* 字体颜色为深灰色 */
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
 }
 
 .content p {
-    margin: 10px 0 0; /* 上边距为 10px，其他边距为 0 */
-    font-size: 14px; /* 字体大小为 14px */
-    font-weight: 400; /* 正常字体粗细 */
-    color: #666; /* 字体颜色为浅灰色 */
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #666;
 }
 
-    /* 新加入的供应链部分样式 - 使用特定前缀 sc-* 避免冲突 */
+/* 供应链部分样式 */
+.sc-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.sc-supply-section {
+    padding: 20vw;
+    width: 100%;
+}
+
+.sc-supply-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+.sc-image-section {
+    display: none;
+    max-width: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.sc-h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #333;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.sc-h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.sc-p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+
+@media (min-width: 768px) {
     .sc-container {
-        display: flex; /* 使用 flex 布局 */
-        max-width: 1200px; /* 最大宽度为 1200px */
-        width: 100%; /* 宽度为 90% */
-        margin: 20px auto; /* 上下外边距为 20px，水平居中 */
-        background-color: #ffffff; /* 背景颜色为白色 */
-        border-radius: 10px; /* 圆角为 10px */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-        overflow: hidden; /* 隐藏超出部分 */
-        flex-direction: column; /* 子元素垂直排列 */
+        flex-direction: row;
     }
 
     .sc-supply-section {
-        padding: 20vw; /* 内边距为视窗宽度的 5% */
-        width: 100%; /* 宽度为 100% */
-    }
-
-    .sc-supply-content {
-        max-width: 800px; /* 最大宽度为 800px */
-        margin: auto; /* 居中对齐 */
-        text-align: left; /* 文本左对齐 */
+        width: 60%;
+        padding: 40px;
     }
 
     .sc-image-section {
-        display: none; /* 默认隐藏 */
-        max-width: 400px; /* 最大宽度为 400px */
-        width: 100%; /* 宽度为 100% */
-        background-size: cover; /* 背景图像填充方式 */
-        background-position: center; /* 背景图像居中 */
+        display: block;
+        width: 40%;
+        background-image: url('供应链.webp');
     }
 
     .sc-h2 {
-        font-family: 'Poppins', sans-serif; /* 使用 Poppins 字体 */
-        font-weight: 700; /* 字体加粗 */
-        font-size: 24px; /* 字体大小为 24px */
-        color: #333; /* 文字颜色为深灰色 */
-        border-bottom: 3px solid #4CAF50; /* 底部边框为绿色，宽度为 3px */
-        padding-bottom: 10px; /* 底部内边距为 10px */
-        margin-bottom: 20px; /* 底部外边距为 20px */
+        font-size: 26px;
     }
 
     .sc-h3 {
-        font-family: 'Poppins', sans-serif; /* 使用 Poppins 字体 */
-        font-weight: 600; /* 字体加粗 */
-        font-size: 20px; /* 字体大小为 20px */
-        color: #4CAF50; /* 文字颜色为绿色 */
-        margin-bottom: 15px; /* 底部外边距为 15px */
+        font-size: 22px;
     }
 
     .sc-p {
-        font-size: 14px; /* 字体大小为 14px */
-        line-height: 1.8; /* 行高为 1.8 */
-        color: #444; /* 文字颜色为深灰色 */
-        margin-bottom: 20px; /* 底部外边距为 20px */
+        font-size: 16px;
     }
+}
 
-    @media (min-width: 768px) {
-        .sc-container {
-            flex-direction: row; /* 宽屏时子元素水平排列 */
-        }
+/* WhatsApp 悬浮按钮样式 */
+.whatsapp-float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
 
-        .sc-supply-section {
-            width: 60%; /* 宽度为 60% */
-            padding: 40px; /* 内边距为 40px */
-        }
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+}
 
-        .sc-image-section {
-            display: block; /* 显示图片部分 */
-            width: 40%; /* 宽度为 40% */
-            background-image: url('供应链.webp'); /* 设置背景图像 */
-        }
+.animated-bounce {
+    animation: bounce 1.5s infinite;
+}
 
-        .sc-h2 {
-            font-size: 26px; /* 字体大小为 26px */
-        }
-
-        .sc-h3 {
-            font-size: 22px; /* 字体大小为 22px */
-        }
-
-        .sc-p {
-            font-size: 16px; /* 字体大小为 16px */
-        }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-
-    @media (max-width: 480px) {
-        .sc-supply-section {
-            padding: 20px; /* 内边距为 20px */
-        }
-
-        .sc-h2 {
-            font-size: 20px; /* 字体大小为 20px */
-        }
-
-        .sc-h3 {
-            font-size: 18px; /* 字体大小为 18px */
-        }
-
-        .sc-p {
-            font-size: 14px; /* 字体大小为 14px */
-        }
+    50% {
+        transform: translateY(-10px);
     }
+}
 
-     /* WhatsApp 悬浮按钮样式 */
-        .whatsapp-float-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-        .whatsapp-icon {
-            width: 60px;
-            height: 60px;
-        }
-        .animated-bounce {
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    .animated-bounce {
-        animation: bounce 1.5s infinite; /* 添加弹跳动画，1.5s 循环 */
-    }
-
-    @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-            transform: translateY(0); /* 初始位置 */
-        }
-
-        40% {
-            transform: translateY(-10px); /* 向上移动 10px */
-        }
-
-        60% {
-            transform: translateY(-5px); /* 向上移动 5px */
-        }
-    }
-       /* 调整各个模块之间的默认外边距 */
-
-/* 主容器和封面部分之间的间距 */
+/* 调整模块之间的外边距 */
 .hero {
-    margin-bottom: 60px; /* 主容器与封面部分之间的间距 */
+    margin-bottom: 60px;
 }
 
-/* 业务范围部分与上方内容的间距 */
-.main-title {
-    margin-top: 60px; /* 标题的顶部外边距，拉开与上方模块的距离 */
-    margin-bottom: 30px; /* 标题与下方内容之间的间距 */
-}
-
-/* 产品内容容器与下方其他模块之间的间距 */
 #custom-html-container {
-    margin-bottom: 60px; /* 产品内容与下方其他模块之间的间距 */
+    margin-bottom: 60px;
 }
 
-/* 供应链模块与下方联系信息模块之间的间距 */
 .sc-container {
-    margin-bottom: 30px; /* 设置供应链模块的底部外边距 */
+    margin-bottom: 30px;
 }
 
-/* 联系信息部分的外边距 */
 .contact-section {
-    margin-bottom: 50px; /* 联系信息与地图部分之间的间距 */
+    margin-bottom: 50px;
+}
+/* 联系信息部分样式修复 */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap; /* 确保在小屏幕时可以换行 */
+    gap: 20px;
+    padding: 40px;
+    justify-content: space-between; /* 在大屏幕上让每部分内容并排显示 */
 }
 
-   </style>
 
+    
+      /* 小屏幕优化 - 当屏幕宽度小于500px时的样式调整 */
+@media (max-width: 800px) {
+    /* 隐藏汉堡菜单，始终显示完整导航栏 */
+    .hamburger {
+        display: none; /* 隐藏汉堡菜单 */
+    }
+
+  /* header 样式，控制 logo 和导航栏在一行显示 */
+header {
+    display: flex;
+    justify-content: space-between; /* 保持Logo在左边，导航在右边 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 20px 8px; /* 上下和左右的内边距调整 */
+    gap: 20px; /* 控制Logo与导航之间的距离 */
+    background-color: #fff; /* 背景颜色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加底部阴影效果 */
+    width: 100%; /* 确保header占据整个可用宽度 */
+    flex-wrap: nowrap; /* 防止换行 */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 13px; /* 调整公司名的字体大小 */
+    font-weight: bold;
+    color: #333;
+    gap: 3px; /* 图标与公司名之间的间距 */
+    white-space: nowrap; /* 防止公司名称换行 */
+}
+
+.logo img {
+    width: 20px; /* 缩小图标大小 */
+    height: 20px;
+}
+
+/* 导航菜单 */
+nav ul {
+    list-style: none;
+    display: flex; /* 设置为flex，确保菜单项横向排列 */
+    gap: 10px; /* 调整菜单项之间的间距 */
+    padding: 0; /* 去除多余的内边距 */
+    margin: 0; /* 去除默认外边距 */
+    background-color: transparent; /* 保持背景透明 */
+    width: auto; /* 确保宽度根据内容自动调整 */
+    box-shadow: none; /* 去除阴影效果 */
+    justify-content: flex-end; /* 导航项靠右对齐 */
+}
+
+nav ul li {
+    display: inline-block; /* 确保列表项在一行内显示 */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333; /* 设置文字颜色 */
+    padding: 5 5px; /* 添加左右内边距，让链接有更多的点击区域 */
+    transition: color 0.3s ease;
+}
+
+    nav ul {
+        display: flex; /* 始终显示导航栏，无需折叠 */
+        flex-direction: row; /* 保持导航栏横向排列 */
+        gap: 10px; /* 调整导航项之间的间距 */
+    logo {
+        font-size: 18px; /* 缩小logo文字 */
+    }
+  
+}
+
+/* 导航栏过渡效果 */
+nav ul {
+    transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover {
+    color: #007bff; /* 鼠标悬停时改变颜色 */
+}
+
+  
+
+    /* 产品部分容器 - 改为两列布局，减少卡片间距 */
+   @media (max-width: 500px) { .product-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    /* 产品卡片 - 使卡片在小屏幕上充满父容器，并调整卡片内边距 */
+    .card {
+        max-width: 100%; /* 卡片宽度为100% */
+        padding: 2px; /* 调整卡片内边距 */
+    }
+
+    /* 卡片标题 - 缩小标题字体大小 */
+    .content h2 {
+        font-size: 16px;
+    }
+
+    /* 卡片文本 - 缩小卡片文字描述 */
+    .content p {
+        font-size: 14px;
+       }}
+
+    /* 供应链部分 - 调整模块的内边距，左右留出空隙，避免内容紧贴边框 */
+    .sc-supply-section {
+        padding: 10px 10px; /* 设置上下内边距为10px，左右为20px */
+        box-sizing: border-box; /* 确保内边距不会超出容器宽度 */
+    }
+
+    /* 供应链标题 - 缩小标题字体，增加自动换行处理 */
+    .sc-h3 {
+        font-size: 16px; /* 缩小字体 */
+        margin-bottom: 10px; /* 缩小标题底部间距 */
+        word-wrap: break-word; /* 自动换行 */
+        word-break: break-all; /* 遇到长单词时自动断行 */
+    }
+
+    /* 供应链段落 - 缩小段落字体，确保自动换行 */
+    .sc-p {
+        font-size: 14px; /* 缩小段落字体 */
+        line-height: 1.3; /* 调整行高 */
+        margin-bottom: 8px; /* 缩小段落底部间距 */
+        word-wrap: break-word; /* 自动换行 */
+        
+    }
+    /* 供应链容器 - 为模块增加内边距，确保文本不紧贴边缘 */
+    .sc-container {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 联系信息部分 - 在小屏幕上垂直排列 */
+    .contact-section {
+        flex-direction: column; /* 改为上下排列 */
+    }
+
+    /* 联系信息块 - 在小屏幕上每个块占据100%宽度 */
+    .contact-info {
+        flex: 1 1 100%;
+    }
+
+    /* 联系信息标题 - 缩小标题字体 */
+    .contact-info h2 {
+        font-size: 15px;
+    }
+
+    /* 联系信息内容 - 缩小段落字体 */
+    .contact-info p {
+        font-size: 15px;
+    }
+
+    
+}
+
+</style>
 
 <body>
     <!-- 主容器 -->
     <div class="container">
         <!-- 导航栏 -->
         <header>
-          <a href="#" class="logo">
+          <a href="中文主页.html" class="logo">
                 <img src="logo-01.png" alt="Company Logo" width="40" height="40">
                 &nbsp;XIA SHANG TRADING PTE LTD
             </a>
@@ -409,7 +644,7 @@
                 <ul>
                    <li><a href="中文主页.html">主页</a></li>
                     <li><a href="服务.html">服务</a></li>
-                    <li><a href="company-profile-en.html?lang=zh">公司简介</a></li>
+                    <li><a href="公司简介.html">公司简介</a></li>
                     <li><a href="index.html">EN</a><a href="services.html?lang=zh" onClick="toggleLanguage()"></a></li>
 
                 </ul>
@@ -423,16 +658,16 @@
 
         <!-- 封面部分 -->
         
-      <div class="hero" style="position: relative; background: url('封面.jpg') no-repeat center center; background-size: cover; height: 400px;">
-       
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(225, 225, 225, 0.3);"></div>
-            <div class="hero-content">
-              <p style="font-size: 36px; font-weight: bold; margin: 0;">优质的中国客车零部件,</p>
-<p style="font-size: 36px; font-weight: bold; margin: 0;">确保高效且可靠的车辆性能。</p>
-                <p style="margin-top: 24px; font-size: 18px; max-width: 400px; line-height: 1.5; margin-bottom: 20px;">
-              我们提供全面的客车零部件解决方案&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 覆盖所有关键系统，支持最佳性能和运营效率。</p>
-        </div>
-      </div>
+     
+    <div class="hero">
+    <div class="hero-content">
+        <h6>优质的中国客车零部件,确保高效且可靠的车辆性能。</h6>
+         <p>
+            我们提供全面的客车零部件解决方案 覆盖所有关键系统，支持最佳性能和运营效率。
+        </p>
+    </div>
+</div>
+
 
         <!-- 业务范围部分 -->
        <!-- 产品模块整体容器 -->
@@ -475,8 +710,9 @@
             </div>
             <div class="card">
                 <div class="content">
-                    <h2 class="card-title">车身部件</h2>
-                    <p class="card-text">车身部件、前后挡风玻璃。</p>
+                  <h2 class="card-title">车身部件</h2>
+                    
+<p class="card-text">&nbsp; &nbsp; &nbsp; &nbsp; 车身部件、前后挡风玻璃。&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
                 </div>
             </div>
             <div class="card">
@@ -488,7 +724,7 @@
             <div class="card">
                 <div class="content">
                     <h2 class="card-title">其他零件</h2>
-                    <p class="card-text">锁具、制动部件、悬挂系统、皮带等。</p>
+                    <p class="card-text">&nbsp;锁具、制动部件、悬挂系统、皮带等。&nbsp;</p>
                 </div>
 
             </div>
@@ -504,8 +740,8 @@
             <!-- 供应链内容部分 -->
 <div class="sc-supply-section">
     <div class="sc-supply-content">
-        <h3 class="sc-h3">新加坡客车零件分销与配件合作</h3>
-        <p class="sc-p">我们专注于在新加坡市场提供高效、优质的客车零件分销服务，确保客户能在最短时间内获得所需零件。通过现代化的物流解决方案与本地化快速配送，我们为客户提供可靠的运营支持。</p>
+        <h3 class="sc-h3">新加坡客车零件销售与配件合作</h3>
+        <p class="sc-p">我们专注于在新加坡市场提供高效、优质的客车零件销售服务，确保客户能在最短时间内获得所需零件。通过现代化的物流解决方案与本地化快速配送，我们为客户提供可靠的运营支持。</p>
 
         <h3 class="sc-h3">与领先供应商的深度合作</h3>
         <p class="sc-p">我们与中国多家知名客车零件制造商建立了紧密合作关系，提供包括车身、发动机、制动系统及悬挂系统在内的关键部件。不论是原厂件还是定制方案，我们都能满足您的需求。</p>
