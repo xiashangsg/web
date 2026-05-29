@@ -744,7 +744,7 @@ nav ul li a:hover {
 
 /* ===== 导航错行修复 + 语言切换胶囊按钮(统一追加) ===== */
 header .logo { white-space: nowrap; font-size: 18px; }
-nav ul { flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+nav ul { flex-wrap: wrap; justify-content: flex-end; align-items: center; position: static; top: auto; right: auto; width: auto; box-shadow: none; padding: 0; }
 nav ul li { margin: 0 8px; }
 nav ul li a { white-space: nowrap; font-size: 14px; }
 nav ul li a.lang-switch {
@@ -760,6 +760,17 @@ nav ul li a.lang-switch {
 }
 nav ul li a.lang-switch:hover { background-color: #4CAF50; color: #fff; }
 nav ul li a.lang-switch .lang-globe { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* 手机端:导航回到正常流，避免与公告栏重叠；窄屏时整条导航换到 logo 下方居中 */
+@media (max-width: 600px) {
+    header { flex-wrap: wrap; row-gap: 10px; padding: 12px 10px; }
+    header .logo { font-size: 16px; }
+    nav { width: 100%; }
+    nav ul { width: 100%; justify-content: center; gap: 6px; flex-wrap: wrap; }
+    nav ul li { margin: 2px 4px; }
+    nav ul li a { font-size: 13px; padding: 4px; }
+    .announcement-bar { margin-top: 0; }
+}
 </style>
 
 
