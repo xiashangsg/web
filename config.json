@@ -1,0 +1,16 @@
+{
+  "siteUrl": "https://xiashangtpl.com",
+  "categoryOptions": [
+    "Bus Windscreen",
+    "Radiator",
+    "Aircon Parts",
+    "Door Parts",
+    "Body Parts",
+    "Suspension",
+    "Brake",
+    "Electrical"
+  ],
+  "whatsappNumber": "6585588100",
+  "whatsappTemplate": "你好,我需要{productName}{model}.——来自XIASHANG官网的消息",
+  "_note": "Keep UTF-8. If WhatsApp text shows ??, copy waTemplate from products.html UI_TEXT."
+}

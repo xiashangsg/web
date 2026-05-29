@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>XIA SHANG TRADING PTE LTD - Company Profile</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="144x144.png">
+    <link rel="canonical" href="https://xiashangtpl.com/company-profile-en.html">
+    <link rel="alternate" hreflang="en" href="https://xiashangtpl.com/company-profile-en.html">
+    <link rel="alternate" hreflang="zh" href="https://xiashangtpl.com/%E5%85%AC%E5%8F%B8%E7%AE%80%E4%BB%8B.html">
+    <link rel="alternate" hreflang="x-default" href="https://xiashangtpl.com/company-profile-en.html">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -247,6 +253,25 @@
 .hero {
     margin-bottom: 60px;
 }
+
+/* ===== 导航错行修复 + 语言切换胶囊按钮(统一追加) ===== */
+header .logo { white-space: nowrap; font-size: 18px; }
+nav ul { flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+nav ul li { margin: 0 8px; }
+nav ul li a { white-space: nowrap; font-size: 14px; }
+nav ul li a.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border: 1px solid #4CAF50;
+    border-radius: 999px;
+    color: #4CAF50;
+    line-height: 1;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+nav ul li a.lang-switch:hover { background-color: #4CAF50; color: #fff; }
+nav ul li a.lang-switch .lang-globe { width: 14px; height: 14px; flex-shrink: 0; }
     </style>
 </head>
 
@@ -263,8 +288,9 @@
         <ul>
            <li><a href="index.html">HOME</a></li>
             <li><a href="services.html">SERVICES</a></li>
-            <li><a href="company-profile-en.html?lang=zh">COMPANY PROFILE</a></li>
-            <li><a href="公司简介.html">中文</a></li>
+            <li><a href="products.html">BUS PARTS CATALOG</a></li>
+            <li><a href="company-profile-en.html">COMPANY PROFILE</a></li>
+            <li><a href="公司简介.html" class="lang-switch"><svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>中文</a></li>
         </ul>
     </nav>
 </header>
@@ -317,9 +343,10 @@
         <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, Singapore 597658</p>
         <p style="margin: 5px 0;">Phone: +65 6862 3986 &nbsp; +65 8558 8100</p>
         <p style="margin: 5px 0;">Email: <a href="mailto:xiashangtpl@outlook.com" style="color: #80cfa9; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+        <p style="margin: 12px 0 5px 0;">For suggestions or complaints, please contact: <a href="mailto:admin@xiashangtpl.com" style="color: #80cfa9; text-decoration: none;">admin@xiashangtpl.com</a></p>
       </div>
       <div class="footer-bottom">
-        <p style="margin: 0; color: #777;">&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+        <p style="margin: 0; color: #777;">&copy; 2026 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
       </div>
     </div>
   </div>

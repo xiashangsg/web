@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
@@ -24,7 +24,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "XIA SHANG TRADING PTE LTD",
-      "url": "https://www.xiashangtpl.com",
+      "url": "https://xiashangtpl.com",
       "logo": "https://xiashangtpl.com/logo-01.png",
       "image": "https://xiashangtpl.com/logo-01.png", 
       "description": "XIA SHANG TRADING PTE LTD specializes in distributing Chinese bus parts and accessories in Singapore, offering reliable solutions for bus performance, including electric vehicle parts and OEM spares for brands like Volvo, Yutong, MAN, and Isuzu.",
@@ -60,7 +60,14 @@
     <!-- 导入字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="144x144.png">
+    <link rel="canonical" href="https://xiashangtpl.com/%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A1%B5.html">
+
+    <!-- 多语言版本互链 (hreflang) -->
+    <link rel="alternate" hreflang="en" href="https://xiashangtpl.com/index.html">
+    <link rel="alternate" hreflang="zh" href="https://xiashangtpl.com/%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A1%B5.html">
+    <link rel="alternate" hreflang="x-default" href="https://xiashangtpl.com/index.html">
    
     <!-- 引入 Anton 字体 -->
      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
@@ -172,7 +179,7 @@ nav ul {
 .hero {
     position: relative; /* 使元素相对定位，方便定位子元素 */
     width: 100%; /* 宽度占据父元素的100% */
-    height: 400px; /* 设置固定的高度为400像素 */
+    height: 300px; /* 封面高度（已调矮，裁切上下保留中间） */
     background: url('封面.jpg') no-repeat center center; /* 背景图片，居中且不重复 */
     background-size: cover; /* 背景图片覆盖整个容器，保持比例 */
     display: flex; /* 使用 flex 布局对齐内容 */
@@ -528,7 +535,7 @@ nav ul li a {
     font-size: 12px;
     font-weight: bold;
     color: #333; /* 设置文字颜色 */
-    padding: 5 5px; /* 添加左右内边距，让链接有更多的点击区域 */
+    padding: 5px; /* 添加左右内边距，让链接有更多的点击区域 */
     transition: color 0.3s ease;
 }
 
@@ -536,11 +543,10 @@ nav ul li a {
         display: flex; /* 始终显示导航栏，无需折叠 */
         flex-direction: row; /* 保持导航栏横向排列 */
         gap: 10px; /* 调整导航项之间的间距 */
-    logo {
+    }
+    .logo {
         font-size: 18px; /* 缩小logo文字 */
     }
-  
-}
 
 /* 导航栏过渡效果 */
 nav ul {
@@ -624,6 +630,135 @@ nav ul li a:hover {
     
 }
 
+/* 顶部公告条：新业务 */
+.announcement-bar {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 6px;
+    margin: 12px 0 20px;
+}
+
+.announcement-bar .ab-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    padding: 1px 8px;
+    margin-right: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.announcement-bar .ab-en {
+    display: block;
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+
+@media (max-width: 560px) {
+    .announcement-bar {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .announcement-bar .ab-en {
+        font-size: 11px;
+    }
+}
+
+/* 产品目录入口按钮区 */
+.catalog-cta-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px;
+}
+
+.catalog-cta-button {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 0 #3a8a3e, 0 8px 18px rgba(76, 175, 80, 0.30);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+.catalog-cta-button:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #3a8a3e, 0 12px 22px rgba(76, 175, 80, 0.40);
+}
+
+.catalog-cta-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #3a8a3e, 0 4px 10px rgba(76, 175, 80, 0.35);
+}
+
+.catalog-cta-icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.catalog-cta-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.15;
+}
+
+.catalog-cta-button .catalog-cta-cn {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.catalog-cta-button .catalog-cta-en {
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+}
+
+@media (max-width: 560px) {
+    .catalog-cta-section {
+        margin: 16px 0 24px;
+    }
+
+    .catalog-cta-button {
+        padding: 10px 22px;
+    }
+
+    .catalog-cta-button .catalog-cta-cn {
+        font-size: 16px;
+    }
+}
+
+/* ===== 导航错行修复 + 语言切换胶囊按钮(统一追加) ===== */
+header .logo { white-space: nowrap; font-size: 18px; }
+nav ul { flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+nav ul li { margin: 0 8px; }
+nav ul li a { white-space: nowrap; font-size: 14px; }
+nav ul li a.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border: 1px solid #4CAF50;
+    border-radius: 999px;
+    color: #4CAF50;
+    line-height: 1;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+nav ul li a.lang-switch:hover { background-color: #4CAF50; color: #fff; }
+nav ul li a.lang-switch .lang-globe { width: 14px; height: 14px; flex-shrink: 0; }
 </style>
 
 <body>
@@ -644,12 +779,18 @@ nav ul li a:hover {
                 <ul>
                    <li><a href="中文主页.html">主页</a></li>
                     <li><a href="服务.html">服务</a></li>
+                    <li><a href="products.html">配件目录</a></li>
                     <li><a href="公司简介.html">公司简介</a></li>
-                    <li><a href="index.html">EN</a><a href="services.html?lang=zh" onClick="toggleLanguage()"></a></li>
+                    <li><a href="index.html" class="lang-switch"><svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>EN</a></li>
 
                 </ul>
             </nav>
         </header>
+
+        <!-- 顶部公告条：新业务 -->
+        <div class="announcement-bar" role="status">
+            <span class="ab-badge">新业务 New</span>现已提供工程车配件、备件的寻源与订货服务。
+        </div>
 
         <!-- WhatsApp 悬浮按钮 -->
         <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" class="whatsapp-float-button animated-bounce">
@@ -667,6 +808,24 @@ nav ul li a:hover {
         </p>
     </div>
 </div>
+
+        <!-- 产品目录入口按钮 -->
+        <div class="catalog-cta-section">
+            <a href="products.html" class="catalog-cta-button">
+                <svg class="catalog-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <circle cx="3.5" cy="6" r="1.3" fill="currentColor" stroke="none"></circle>
+                    <circle cx="3.5" cy="12" r="1.3" fill="currentColor" stroke="none"></circle>
+                    <circle cx="3.5" cy="18" r="1.3" fill="currentColor" stroke="none"></circle>
+                </svg>
+                <span class="catalog-cta-text">
+                    <span class="catalog-cta-cn">巴士零部件目录</span>
+                    <span class="catalog-cta-en">Bus Parts Catalog</span>
+                </span>
+            </a>
+        </div>
 
 
         <!-- 业务范围部分 -->
@@ -769,12 +928,13 @@ nav ul li a:hover {
         <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 20px;">邮箱：</h2>
         <p><a href="mailto:xiashangtpl@outlook.com"><strong>xiashangtpl@outlook.com</strong></a></p>
     </div>
-    <!-- 微信部分 -->
+    <!-- WhatsApp 联系提示 -->
     <div style="flex: 1; min-width: 200px;">
-        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">微信：</h2>
-        <p><strong>微信号：x85588100</strong></p>
-        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 20px;">微信二维码：</h2>
-        <img src="微信.png" alt="微信二维码" style="max-width: 150px; height: auto; border: 1px solid #ccc;">
+        <h2 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px;">WhatsApp：</h2>
+        <a href="https://api.whatsapp.com/send?phone=6585588100" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background-color:#25D366; color:#fff; text-decoration:none; padding:10px 18px; border-radius:8px; font-weight:bold; margin-top:8px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:20px; height:20px;">
+            通过 WhatsApp 联系我们
+        </a>
     </div>
     <!-- 工作时间部分 -->
     <div style="flex: 1; min-width: 200px;">
@@ -788,10 +948,17 @@ nav ul li a:hover {
 </div>
 
 
-    <!-- 地图部分 -->
-    <div class="map-container" style="flex: 1; max-width: 400px; height: 300px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7967.482768162027!2d103.75525304070282!3d1.3336943983020481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da111f2e1b7abf%3A0x66f6b2e1f0170e2c!2s32%20Old%20Toh%20Tuck%20Rd%2C%20Singapore%20597658!5e0!3m2!1sen!2ssg!4v1690298999990!5m2!1sen!2ssg"
-            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <!-- 地图部分（Google 商家：XIA SHANG TRADING PTE. LTD.） -->
+    <div class="map-container" style="flex: 1; max-width: 400px;">
+        <div style="height: 300px;">
+            <iframe title="夏商贸易 XIA SHANG TRADING PTE. LTD. — Google 地图"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7967.482768162027!2d103.7584247!3d1.3333264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1193a094c7d1%3A0xa43995cd0b581dac!2sXIA%20SHANG%20TRADING%20PTE.%20LTD.!5e0!3m2!1szh-CN!2ssg!4v1748240000000!5m2!1szh-CN!2ssg"
+                width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p style="margin: 8px 0 0; font-size: 0.9rem; text-align: center;">
+            <a href="https://www.google.com/maps/place/XIA+SHANG+TRADING+PTE.+LTD./@1.3333264,103.7584247,17z/data=!4m6!3m5!1s0x31da1193a094c7d1:0xa43995cd0b581dac!8m2!3d1.3333264!4d103.7584247!16s%2Fg%2F11z1t6htns"
+                target="_blank" rel="noopener noreferrer" style="color: #1a73e8;">在 Google 地图上打开</a>
+        </p>
     </div>
 </div>
 
@@ -806,10 +973,11 @@ nav ul li a:hover {
         </div>
         <div class="contact-info" style="margin-bottom: 20px;">
             <p style="margin: 5px 0;">32 Old Toh Tuck Road, Ibiz Center #01-03, Singapore 597658</p>
-            <p style="margin: 5px 0;">Phone: 6862 3986 | Email: <a href="mailto:xiashangtpl@outlook.com" style="color: #25D366; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+            <p style="margin: 5px 0;">电话: 6862 3986 | 邮箱: <a href="mailto:xiashangtpl@outlook.com" style="color: #25D366; text-decoration: none;">xiashangtpl@outlook.com</a></p>
+            <p style="margin: 12px 0 5px 0;">建议与投诉请联系：<a href="mailto:admin@xiashangtpl.com" style="color: #25D366; text-decoration: none;">admin@xiashangtpl.com</a></p>
         </div>
         <div class="footer-bottom">
-            <p style="margin: 0;">&copy; 2024 XIA SHANG TRADING PTE LTD. All Rights Reserved.</p>
+            <p style="margin: 0;">&copy; 2026 XIA SHANG TRADING PTE LTD. 版权所有。</p>
         </div>
     </div>
 </footer>
@@ -825,7 +993,7 @@ nav ul li a:hover {
                 const currentLang = document.documentElement.lang;
                 if (currentLang === 'en-US') {
                     document.documentElement.lang = 'zh-CN';
-                    window.location.href = 'index-zh.html'; // 跳转到中文网页
+                    window.location.href = '中文主页.html'; // 跳转到中文网页
                 } else {
                     document.documentElement.lang = 'en-US';
                     window.location.href = 'index.html'; // 跳转到英文网页
