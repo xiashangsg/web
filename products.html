@@ -5876,7 +5876,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="control control-subcategory">
+                <div class="control control-subcategory" hidden>
                     <label for="filter-subcategory" id="label-filter-subcategory"></label>
                     <div class="filter-select-wrap">
                         <select id="filter-subcategory" class="filter-select-native" aria-label=""></select>
@@ -6086,10 +6086,8 @@
 
         function updateFilterControlsForCategory() {
             var isBrand = isBrandPartCategory(getSelectedCategory());
-            var subCtrl = document.querySelector('.control-subcategory');
             var labelKw = document.getElementById('label-filter-keyword');
             var inputKw = document.getElementById('filter-keyword');
-            if (subCtrl) subCtrl.hidden = isBrand;
             if (labelKw) labelKw.textContent = isBrand ? UI_TEXT.labelBrandSearch : UI_TEXT.labelModelSearch;
             if (inputKw) inputKw.placeholder = isBrand ? UI_TEXT.placeholderBrandSearch : UI_TEXT.placeholderModelSearch;
         }
@@ -6287,11 +6285,6 @@
         function rowMatchesCategory(row, selected) {
             if (!selected) return true;
             return norm(getCell(row, 'category')) === norm(selected);
-        }
-
-        function rowMatchesSubcategory(row, selected) {
-            if (!selected) return true;
-            return norm(getCell(row, 'productName')) === norm(selected);
         }
 
         function tokenizeForSearch(text) {
@@ -6520,49 +6513,6 @@
             updateSelectFace('filter-category');
         }
 
-        /** Unique productName values (first-seen order), optionally within current category. */
-        function getUniqueProductNamesFromRows(rows) {
-            var seen = {};
-            var list = [];
-            (rows || allRows).forEach(function (row) {
-                var name = String(getCell(row, 'productName')).trim();
-                if (!name || seen[name]) return;
-                seen[name] = true;
-                list.push(name);
-            });
-            return list;
-        }
-
-        function populateSubcategorySelect() {
-            var sel = document.getElementById('filter-subcategory');
-            if (!sel) return;
-            var selectedCat = getSelectedCategory();
-            var rows = allRows.filter(function (row) {
-                return rowMatchesCategory(row, selectedCat);
-            });
-            var names = getUniqueProductNamesFromRows(rows);
-            sel.innerHTML = '';
-            var allOpt = document.createElement('option');
-            allOpt.value = '';
-            allOpt.dataset.en = 'All';
-            allOpt.dataset.zh = '\u5168\u90e8';
-            allOpt.textContent = 'All\n\u5168\u90e8';
-            sel.appendChild(allOpt);
-            names.forEach(function (name) {
-                var o = document.createElement('option');
-                setSelectOptionBilingual(o, parseBilingualLabel(name));
-                sel.appendChild(o);
-            });
-            sel.selectedIndex = 0;
-            updateSelectFace('filter-subcategory');
-        }
-
-        function getSelectedSubcategory() {
-            var sel = document.getElementById('filter-subcategory');
-            if (!sel) return '';
-            return sel.value || '';
-        }
-
         function getSelectedCategory() {
             var sel = document.getElementById('filter-category');
             if (!sel || !sel.options.length) return '';
@@ -6589,10 +6539,8 @@
 
         function getFilteredRows() {
             var selectedCat = getSelectedCategory();
-            var selectedSub = getSelectedSubcategory();
             var rows = allRows.filter(function (row) {
                 return rowMatchesCategory(row, selectedCat)
-                    && rowMatchesSubcategory(row, selectedSub)
                     && rowMatchesKeyword(row, appliedKeywordQuery);
             });
             return sortForDisplay(rows);
@@ -6845,7 +6793,6 @@
             appliedKeywordQuery = '';
             currentPage = 1;
             syncCategoryOptionsFromSheet();
-            populateSubcategorySelect();
             updateFilterControlsForCategory();
             renderCatalog();
         }
@@ -6871,13 +6818,7 @@
             var inputKw = document.getElementById('filter-keyword');
             if (inputKw) inputKw.value = '';
             updateSelectFace('filter-category');
-            populateSubcategorySelect();
             updateFilterControlsForCategory();
-            renderCatalog();
-        });
-        document.getElementById('filter-subcategory').addEventListener('change', function () {
-            currentPage = 1;
-            updateSelectFace('filter-subcategory');
             renderCatalog();
         });
 
