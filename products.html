@@ -3910,7 +3910,21 @@
         }
 
         .product-card .field-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
             margin-top: 4px;
+        }
+
+        .product-card .field-brand strong {
+            display: block;
+            min-width: 0;
+        }
+
+        .product-card .field-brand .model-value-inline {
+            display: block;
+            line-height: 1.3;
         }
 
         .product-card .category-pill {
