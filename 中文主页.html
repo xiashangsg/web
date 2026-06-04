@@ -959,19 +959,53 @@ nav ul li a.lang-switch .lang-globe { width: 14px; height: 14px; flex-shrink: 0;
 </div>
 
 
-    <!-- 地图部分（Google 商家：XIA SHANG TRADING PTE. LTD.） -->
+    <!-- 地图部分（Google 商家定位器：XIA SHANG TRADING PTE. LTD.） -->
     <div class="map-container" style="flex: 1; max-width: 400px;">
-        <div style="height: 300px;">
-            <iframe title="夏商贸易 XIA SHANG TRADING PTE. LTD. — Google 地图"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7967.482768162027!2d103.7584247!3d1.3333264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1193a094c7d1%3A0xa43995cd0b581dac!2sXIA%20SHANG%20TRADING%20PTE.%20LTD.!5e0!3m2!1szh-CN!2ssg!4v1748240000000!5m2!1szh-CN!2ssg"
-                width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <style>
+            gmpx-store-locator {
+                width: 100%;
+                height: 380px;
+                --gmpx-color-surface: #fff;
+                --gmpx-color-on-surface: #212121;
+                --gmpx-color-on-surface-variant: #757575;
+                --gmpx-color-primary: #1967d2;
+                --gmpx-color-outline: #e0e0e0;
+                --gmpx-fixed-panel-width-row-layout: 14em;
+                --gmpx-fixed-panel-height-column-layout: 45%;
+                --gmpx-font-family-base: "Roboto", sans-serif;
+                --gmpx-font-family-headings: "Roboto", sans-serif;
+                --gmpx-font-size-base: 0.875rem;
+                --gmpx-hours-color-open: #188038;
+                --gmpx-hours-color-closed: #d50000;
+                --gmpx-rating-color: #ffb300;
+                --gmpx-rating-color-empty: #e0e0e0;
+            }
+        </style>
+        <gmpx-api-loader key="AIzaSyBdDm2gSfZ7s7lefNuTHEhM0pnvsuijOCo" solution-channel="GMP_QB_locatorplus_v11_c"></gmpx-api-loader>
+        <gmpx-store-locator map-id="DEMO_MAP_ID"></gmpx-store-locator>
         <p style="margin: 8px 0 0; font-size: 0.9rem; text-align: center;">
-            <a href="https://www.google.com/maps/place/XIA+SHANG+TRADING+PTE.+LTD./@1.3333264,103.7584247,17z/data=!4m6!3m5!1s0x31da1193a094c7d1:0xa43995cd0b581dac!8m2!3d1.3333264!4d103.7584247!16s%2Fg%2F11z1t6htns"
+            <a href="https://www.google.com/maps/place/?q=place_id:ChIJ0ceUoJMR2jERrB1YC82VOaQ"
                 target="_blank" rel="noopener noreferrer" style="color: #1a73e8;">在 Google 地图上打开</a>
         </p>
     </div>
 </div>
+<!-- Google 扩展组件库（Store Locator 定位器） -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js"></script>
+<script>
+    const LOCATOR_CONFIGURATION = {
+        "locations": [
+            {"title":"夏商贸易 XIA SHANG TRADING PTE. LTD.","address1":"32 Old Toh Tuck Road","address2":"新加坡 Singapore","coords":{"lat":1.3333264,"lng":103.7584247},"placeId":"ChIJ0ceUoJMR2jERrB1YC82VOaQ"}
+        ],
+        "mapOptions": {"center":{"lat":1.3333264,"lng":103.7584247},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":15,"zoomControl":true,"maxZoom":17,"mapId":""},
+        "mapsApiKey": "AIzaSyBdDm2gSfZ7s7lefNuTHEhM0pnvsuijOCo",
+        "capabilities": {"input":false,"autocomplete":false,"directions":false,"distanceMatrix":false,"details":false,"actions":false}
+    };
+    document.addEventListener('DOMContentLoaded', async () => {
+        await customElements.whenDefined('gmpx-store-locator');
+        const locator = document.querySelector('gmpx-store-locator');
+        if (locator) locator.configureFromQuickBuilder(LOCATOR_CONFIGURATION);
+    });
+</script>
 
 
 

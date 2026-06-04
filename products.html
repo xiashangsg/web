@@ -3869,6 +3869,50 @@
             color: #555;
         }
 
+        .product-card .name-inline .name-cn-inline,
+        .product-card .name-inline .name-en-inline {
+            display: inline;
+        }
+
+        .product-card .name-inline .name-cn-inline {
+            font-size: 18px;
+            font-weight: 800;
+            color: #222;
+        }
+
+        .product-card .name-inline .name-en-inline {
+            font-size: 16px;
+            font-weight: 600;
+            font-style: italic;
+            color: #555;
+        }
+
+        .product-card .field-model .model-value-inline {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1565c0;
+            white-space: nowrap;
+        }
+
+        .product-card .field-model .model-value-inline .name-cn-inline,
+        .product-card .field-model .model-value-inline .name-en-inline {
+            color: #1565c0;
+            font-weight: 700;
+        }
+
+        .product-card .field-model .model-value-inline .name-cn-inline {
+            font-size: 20px;
+        }
+
+        .product-card .field-model .model-value-inline .name-en-inline {
+            font-size: 18px;
+            font-style: normal;
+        }
+
+        .product-card .field-brand {
+            margin-top: 4px;
+        }
+
         .product-card .category-pill {
             display: inline-block;
             background: #e8f5e9;
@@ -4027,7 +4071,7 @@
                 </div>
                 <div class="control control-keyword">
                     <label for="filter-keyword" id="label-filter-keyword"></label>
-                    <input type="search" id="filter-keyword" placeholder="" autocomplete="off">
+                    <input type="search" id="filter-keyword" placeholder="" autocomplete="off" autocapitalize="off" spellcheck="false">
                 </div>
                 <div class="control control-search">
                     <label for="btn-filter-search" class="filter-search-label">&nbsp;</label>
@@ -4075,8 +4119,13 @@
             labelSubcategory: 'Sub-category / \u5b50\u7c7b\u522b',
             subcategoryAll: 'All / \u5168\u90e8',
             labelModelSearch: '\u8f66\u7684\u578b\u53f7 / Model',
+            labelBrandSearch: '\u9002\u7528\u54c1\u724c / Brand',
             placeholderModelSearch: 'e.g. XMQ6117',
+            placeholderBrandSearch: 'e.g. \u91d1\u9f99 King Long / XMQ',
             fieldApplicableModelCn: '\u9002\u7528\u8f66\u578b',
+            fieldApplicableBrandCn: '\u9002\u7528\u54c1\u724c',
+            emptySearchHintBrandCn: '\u53ef\u641c\u4e2d\u6587\u54c1\u724c\u3001\u82f1\u6587\u6216\u8f66\u578b\u524d\u7f00\uff08\u5982 \u91d1\u9f99\u3001XMQ\u3001xmq6100\uff09\u3002',
+            emptySearchHintBrandEn: 'Search by brand name (CN/EN) or model prefix (e.g. King Long, XMQ, xmq6100). Digits-only will not match.',
             waTemplate: '\u4f60\u597d,\u6211\u9700\u8981{productName}{model}.\u2014\u2014\u6765\u81eaXIASHANG\u5b98\u7f51\u7684\u6d88\u606f',
             emptySearchCn: '\u672a\u627e\u5230\u5339\u914d\u7684\u4ea7\u54c1\u3002',
             emptySearchEn: 'No matching products found.',
@@ -4107,6 +4156,30 @@
             if (selSub) selSub.setAttribute('aria-label', UI_TEXT.labelSubcategory);
             if (labelKw) labelKw.textContent = UI_TEXT.labelModelSearch;
             if (inputKw) inputKw.placeholder = UI_TEXT.placeholderModelSearch;
+        }
+
+        function isBrandPartCategory(cat) {
+            var c = String(cat == null ? '' : cat).trim();
+            if (!c) return false;
+            var i;
+            for (i = 0; i < BRAND_PART_CATEGORIES.length; i++) {
+                if (c === BRAND_PART_CATEGORIES[i]) return true;
+            }
+            return false;
+        }
+
+        function isBrandPartRow(row) {
+            return isBrandPartCategory(getCell(row, 'category'));
+        }
+
+        function updateFilterControlsForCategory() {
+            var isBrand = isBrandPartCategory(getSelectedCategory());
+            var subCtrl = document.querySelector('.control-subcategory');
+            var labelKw = document.getElementById('label-filter-keyword');
+            var inputKw = document.getElementById('filter-keyword');
+            if (subCtrl) subCtrl.hidden = isBrand;
+            if (labelKw) labelKw.textContent = isBrand ? UI_TEXT.labelBrandSearch : UI_TEXT.labelModelSearch;
+            if (inputKw) inputKw.placeholder = isBrand ? UI_TEXT.placeholderBrandSearch : UI_TEXT.placeholderModelSearch;
         }
 
         function sanitizeWhatsappTemplate(t) {
@@ -4146,7 +4219,46 @@
             'Body Parts': '\u8f66\u8eab\u90e8\u4ef6',
             'Suspension': '\u60ac\u6302\u90e8\u4ef6',
             'Brake': '\u5236\u52a8\u90e8\u4ef6',
-            'Electrical': '\u7535\u6c14\u90e8\u4ef6'
+            'Electrical': '\u7535\u6c14\u90e8\u4ef6',
+            'Drive Shaft': '\u4f20\u52a8\u8f74',
+            'Brake Pad': '\u5239\u8f66\u7247',
+            'Brake Drum': '\u5236\u52a8\u9f13',
+            'Link Rod': '\u62c9\u6746',
+            'Brake Shoe': '\u8e44\u94c1'
+        };
+
+        /** \u4f20\u52a8\u5236\u52a8\u7c7b\u54c1\u724c\u4ef6\uff1a\u6bcf\u79cd\u96f6\u4ef6\u72ec\u7acb\u5206\u7c7b\uff0c\u65e0\u5b50\u7c7b */
+        const BRAND_PART_CATEGORIES = [
+            'Drive Shaft / \u4f20\u52a8\u8f74',
+            'Brake Pad / \u5239\u8f66\u7247',
+            'Brake Drum / \u5236\u52a8\u9f13',
+            'Link Rod / \u62c9\u6746',
+            'Brake Shoe / \u8e44\u94c1'
+        ];
+
+        /** Prefix \u2194 brand aliases (lowercase keys for prefix lookup). */
+        const PREFIX_BRAND_ALIASES = {
+            zk: ['\u5b87\u901a', 'yutong', 'zk'],
+            xmq: ['\u91d1\u9f99', 'king long', 'xmq'],
+            xml: ['\u91d1\u65c5', 'golden dragon', 'xml'],
+            klq: ['\u6d77\u683c', 'higer', 'klq'],
+            lck: ['\u4e2d\u901a', 'zhongtong', 'lck'],
+            bj: ['\u798f\u7530', 'foton', 'bj'],
+            hff: ['\u5b89\u51ef', 'ankai', 'hff'],
+            yck: ['\u4e2d\u5927', 'zhongda', 'yck'],
+            hola: ['hola']
+        };
+
+        const BRAND_CN_ALIASES = {
+            '\u5b87\u901a': PREFIX_BRAND_ALIASES.zk,
+            '\u91d1\u9f99': PREFIX_BRAND_ALIASES.xmq,
+            '\u91d1\u65c5': PREFIX_BRAND_ALIASES.xml,
+            '\u6d77\u683c': PREFIX_BRAND_ALIASES.klq,
+            '\u4e2d\u901a': PREFIX_BRAND_ALIASES.lck,
+            '\u798f\u7530': PREFIX_BRAND_ALIASES.bj,
+            '\u5b89\u51ef': PREFIX_BRAND_ALIASES.hff,
+            '\u4e2d\u5927': PREFIX_BRAND_ALIASES.yck,
+            hola: PREFIX_BRAND_ALIASES.hola
         };
 
         const DEFAULT_WHATSAPP_NUMBER = '6585588100';
@@ -4195,7 +4307,13 @@
         }
 
         function norm(s) {
-            return (s == null ? '' : String(s)).trim().toLowerCase();
+            return String(s == null ? '' : s)
+                .replace(/[\uFF01-\uFF5E]/g, function (ch) {
+                    return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
+                })
+                .replace(/\u3000/g, ' ')
+                .trim()
+                .toLowerCase();
         }
 
         function trimCell(val) {
@@ -4225,6 +4343,18 @@
         }
 
         function applyTemplate(product, keywordInput) {
+            var t = appConfig.whatsappTemplate || DEFAULT_WHATSAPP_TEMPLATE;
+
+            if (isBrandPartRow(product)) {
+                var brandParts = splitProductName(getCell(product, 'productName') || getCell(product, 'displayText'));
+                var brandCn = brandParts.cn || brandParts.en || '';
+                var categoryCn = parseBilingualLabel(getCell(product, 'category')).zh || '';
+                var detailPart = categoryCn ? ' ' + categoryCn : '';
+                return t
+                    .replace(/\{productName\}/g, brandCn)
+                    .replace(/\{model\}/g, detailPart);
+            }
+
             var nameParts = splitProductName(getCell(product, 'productName'));
             var nameVal = nameParts.cn || nameParts.en || '';
             var modelVal = String(keywordInput == null ? '' : keywordInput).trim();
@@ -4232,7 +4362,6 @@
                 modelVal = String(getCell(product, 'displayText') || '').trim();
             }
             var modelPart = modelVal ? '  ' + modelVal : '';
-            var t = appConfig.whatsappTemplate || DEFAULT_WHATSAPP_TEMPLATE;
             return t
                 .replace(/\{productName\}/g, nameVal)
                 .replace(/\{model\}/g, modelPart);
@@ -4255,7 +4384,7 @@
         }
 
         function tokenizeForSearch(text) {
-            return norm(text).split(/[\s,;??/|]+/).filter(function (t) {
+            return norm(text).split(/[\s,;/|\u3001\uFF0C]+/).filter(function (t) {
                 return t.length > 0;
             });
         }
@@ -4278,7 +4407,98 @@
             return new RegExp('^' + escapeRegex(query) + '[a-z0-9]*$').test(token);
         }
 
-        function rowMatchesKeyword(row, query) {
+        function uniqueTerms(list) {
+            var seen = {};
+            var out = [];
+            var i;
+            for (i = 0; i < list.length; i++) {
+                var t = list[i];
+                if (!t || seen[t]) continue;
+                seen[t] = true;
+                out.push(t);
+            }
+            return out;
+        }
+
+        function getAliasesForPrefix(prefix) {
+            var key = norm(prefix);
+            if (PREFIX_BRAND_ALIASES[key]) return PREFIX_BRAND_ALIASES[key].slice();
+            return [];
+        }
+
+        /** Full model-style query: letters then digits \u2192 letter prefix only (xmq6100 \u2192 xmq). */
+        function extractLetterPrefixFromQuery(q) {
+            var m = q.match(/^([a-z]+)\d+/);
+            return m ? m[1] : null;
+        }
+
+        function getBrandSearchTerms(query) {
+            var q = norm(query);
+            if (!q) return null;
+            if (/^\d+$/.test(q)) return [];
+            var terms = [q];
+            var letterPrefix = extractLetterPrefixFromQuery(q);
+            if (letterPrefix) {
+                terms = terms.concat(getAliasesForPrefix(letterPrefix));
+            }
+            if (/^[a-z]+$/.test(q)) {
+                terms = terms.concat(getAliasesForPrefix(q));
+            }
+            var cn;
+            for (cn in BRAND_CN_ALIASES) {
+                if (Object.prototype.hasOwnProperty.call(BRAND_CN_ALIASES, cn)) {
+                    if (q.indexOf(cn) !== -1 || cn.indexOf(q) !== -1) {
+                        terms = terms.concat(BRAND_CN_ALIASES[cn]);
+                    }
+                }
+            }
+            var key;
+            for (key in PREFIX_BRAND_ALIASES) {
+                if (!Object.prototype.hasOwnProperty.call(PREFIX_BRAND_ALIASES, key)) continue;
+                if (key === q || PREFIX_BRAND_ALIASES[key].indexOf(q) !== -1) {
+                    terms.push(key);
+                    terms = terms.concat(PREFIX_BRAND_ALIASES[key]);
+                }
+            }
+            return uniqueTerms(terms.map(function (t) { return norm(t); }));
+        }
+
+        function fieldMatchesBrandTerms(raw, terms) {
+            var normalized = norm(raw);
+            if (!normalized) return false;
+            var tokens = tokenizeForSearch(raw);
+            var parts = normalized.split(/[,;/|\u3001\uFF0C]+/).map(function (p) {
+                return p.trim();
+            }).filter(Boolean);
+            var i;
+            var j;
+            var k;
+            for (i = 0; i < terms.length; i++) {
+                var term = norm(terms[i]);
+                if (!term) continue;
+                if (normalized.indexOf(term) !== -1) return true;
+                for (j = 0; j < tokens.length; j++) {
+                    if (norm(tokens[j]) === term) return true;
+                }
+                for (k = 0; k < parts.length; k++) {
+                    if (parts[k] === term) return true;
+                }
+            }
+            return false;
+        }
+
+        function rowMatchesKeywordBrandPart(row, query) {
+            var terms = getBrandSearchTerms(query);
+            if (terms === null) return true;
+            if (!terms.length) return false;
+            var i;
+            for (i = 0; i < SEARCH_FIELDS.length; i++) {
+                if (fieldMatchesBrandTerms(getCell(row, SEARCH_FIELDS[i]), terms)) return true;
+            }
+            return false;
+        }
+
+        function rowMatchesKeywordModel(row, query) {
             var q = norm(query);
             if (!q) return true;
             var i;
@@ -4293,6 +4513,13 @@
                 }
             }
             return false;
+        }
+
+        function rowMatchesKeyword(row, query) {
+            if (isBrandPartCategory(getSelectedCategory())) {
+                return rowMatchesKeywordBrandPart(row, query);
+            }
+            return rowMatchesKeywordModel(row, query);
         }
 
         function categoryDisplayLabel(en) {
@@ -4488,27 +4715,72 @@
             return '<span class="name-en name-en-only">' + escapeHtml(parts.en) + '</span>';
         }
 
+        /** \u54c1\u724c\u4ef6\uff1a\u4e2d\u82f1\u6587\u54c1\u724c\u540c\u884c\u663e\u793a */
+        function formatInlineBilingualHtml(text) {
+            var parts = splitProductName(text);
+            if (!parts.cn && !parts.en) return '-';
+            if (parts.cn && parts.en) {
+                return (
+                    '<span class="name-inline">' +
+                    '<span class="name-cn-inline">' + escapeHtml(parts.cn) + '</span> ' +
+                    '<span class="name-en-inline">' + escapeHtml(parts.en) + '</span>' +
+                    '</span>'
+                );
+            }
+            if (parts.cn) return '<span class="name-inline name-cn-inline">' + escapeHtml(parts.cn) + '</span>';
+            return '<span class="name-inline name-en-inline">' + escapeHtml(parts.en) + '</span>';
+        }
+
         function buildCard(row) {
             var name = getCell(row, 'productName');
             var wa = waHref(row);
+            var isBrand = isBrandPartRow(row);
+            var fieldLabelCn = isBrand ? UI_TEXT.fieldApplicableBrandCn : UI_TEXT.fieldApplicableModelCn;
+            var fieldLabelEn = isBrand ? 'Brand:' : 'Model:';
+            var brandText = getCell(row, 'displayText') || name;
             var card = document.createElement('article');
             card.className = 'product-card';
-            card.innerHTML =
-                '<div class="body">' +
-                    '<div class="card-text">' +
-                        '<span class="category-pill">' + escapeHtml(categoryDisplayLabel(getCell(row, 'category'))) + '</span>' +
-                        '<h2 class="name">' + formatProductNameHtml(name) + '</h2>' +
-                        '<div class="field field-model"><strong><span class="field-label-cn">' + UI_TEXT.fieldApplicableModelCn + '</span> <span class="field-label-sep">/</span> <span class="field-label-en">Model:</span></strong> <span class="model-value">' + escapeHtml(getCell(row, 'displayText') || '-') + '</span></div>' +
-                    '</div>' +
-                    '<a class="product-wa-round" href="' + escapeHtml(wa) + '" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp quote">' +
-                        '<img src="' + WHATSAPP_ICON + '" alt="">' +
-                    '</a>' +
-                '</div>';
+            if (isBrand) {
+                card.innerHTML =
+                    '<div class="body">' +
+                        '<div class="card-text">' +
+                            '<span class="category-pill">' + escapeHtml(categoryDisplayLabel(getCell(row, 'category'))) + '</span>' +
+                            '<div class="field field-model field-brand"><strong><span class="field-label-cn">' + fieldLabelCn + '</span> <span class="field-label-sep">/</span> <span class="field-label-en">' + fieldLabelEn + '</span></strong> <span class="model-value model-value-inline">' + formatInlineBilingualHtml(brandText) + '</span></div>' +
+                        '</div>' +
+                        '<a class="product-wa-round" href="' + escapeHtml(wa) + '" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp quote">' +
+                            '<img src="' + WHATSAPP_ICON + '" alt="">' +
+                        '</a>' +
+                    '</div>';
+            } else {
+                card.innerHTML =
+                    '<div class="body">' +
+                        '<div class="card-text">' +
+                            '<span class="category-pill">' + escapeHtml(categoryDisplayLabel(getCell(row, 'category'))) + '</span>' +
+                            '<h2 class="name">' + formatProductNameHtml(name) + '</h2>' +
+                            '<div class="field field-model"><strong><span class="field-label-cn">' + fieldLabelCn + '</span> <span class="field-label-sep">/</span> <span class="field-label-en">' + fieldLabelEn + '</span></strong> <span class="model-value">' + escapeHtml(getCell(row, 'displayText') || '-') + '</span></div>' +
+                        '</div>' +
+                        '<a class="product-wa-round" href="' + escapeHtml(wa) + '" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp quote">' +
+                            '<img src="' + WHATSAPP_ICON + '" alt="">' +
+                        '</a>' +
+                    '</div>';
+            }
             return card;
         }
 
         function getEmptyStatusHtml() {
             if (appliedKeywordQuery) {
+                if (isBrandPartCategory(getSelectedCategory())) {
+                    return (
+                        '<p class="empty-hint">' + escapeHtml(UI_TEXT.emptySearchHintBrandCn) + '</p>' +
+                        '<p class="empty-hint">' + escapeHtml(UI_TEXT.emptySearchHintBrandEn) + '</p>' +
+                        '<p class="empty-spacer" aria-hidden="true">&nbsp;</p>' +
+                        '<p>' + escapeHtml(UI_TEXT.emptySearchCn) + '</p>' +
+                        '<p>' + escapeHtml(UI_TEXT.emptySearchEn) + '</p>' +
+                        '<p class="empty-spacer" aria-hidden="true">&nbsp;</p>' +
+                        '<p class="empty-hint">' + escapeHtml(UI_TEXT.emptySearchWaCn) + '</p>' +
+                        '<p class="empty-hint">' + escapeHtml(UI_TEXT.emptySearchWaEn) + '</p>'
+                    );
+                }
                 return (
                     '<p class="empty-hint">' + escapeHtml(UI_TEXT.emptySearchHintCn) + '</p>' +
                     '<p class="empty-hint">' + escapeHtml(UI_TEXT.emptySearchHintEn) + '</p>' +
@@ -4683,6 +4955,7 @@
             currentPage = 1;
             syncCategoryOptionsFromSheet();
             populateSubcategorySelect();
+            updateFilterControlsForCategory();
             renderCatalog();
         }
 
@@ -4703,8 +4976,12 @@
         });
         document.getElementById('filter-category').addEventListener('change', function () {
             currentPage = 1;
+            appliedKeywordQuery = '';
+            var inputKw = document.getElementById('filter-keyword');
+            if (inputKw) inputKw.value = '';
             updateSelectFace('filter-category');
             populateSubcategorySelect();
+            updateFilterControlsForCategory();
             renderCatalog();
         });
         document.getElementById('filter-subcategory').addEventListener('change', function () {
